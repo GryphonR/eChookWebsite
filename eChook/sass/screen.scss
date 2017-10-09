@@ -1,0 +1,153 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,500);
+
+* {
+  box-sizing:border-box;   
+}
+
+html,
+body {
+    width:100%;
+    height:100%;    
+}
+
+html { 
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+body {
+ margin:.5em;
+ font: 1em 'Oswald', sans-serif;
+}
+
+.container{
+    display: flex;
+}
+.fixed{
+    width: 3.5em;
+}
+.flex-item{
+    flex-grow: 1;
+}
+#title-header{
+    width: 100%;
+    background: #232020;
+    height: 3.6em;    
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#logo-background{
+
+}
+
+
+#logo{
+    position: relative;
+    background: #E71B64;
+    height: 1.46em;
+    text-align: right;  
+    border-top-left-radius: 0.2em;
+    padding-left: 0.7em;
+    padding-right: 0.2em;
+    top: -0.22em;
+    
+    
+    color: #FFFFFF;
+    font: 3.5em 'Oswald', sans-serif;
+    text-rendering: optimizelegibility;
+    
+    box-shadow:0.1em 0 0.1em 0 rgba(0, 0, 0, .2);
+
+}
+
+nav[role="full-horizontal"] {
+    display: inline-block;
+    width: 100%;
+    align-items : center;
+    
+    ul {
+      width:100%;
+      padding-left: 5em;
+      list-style:none;
+      display: inline-block;
+      list-style-type: none;
+      color:rgba(0,0,0,0);
+
+      > li {
+        position: relative;
+        float: left;
+        padding:.25em 1em;
+        margin: 0.5em;
+    
+        text-transform:uppercase;
+        cursor:pointer;
+        color:rgba(0,0,0,0);
+        text-align:center;
+        border-radius:.1em;
+        transition-duration: .3s;
+        transition-timing-function: ease-in-out;
+        transition-property: background, color, padding, border-radius;
+        
+    
+        &:after {
+          position:absolute;
+          z-index:-1;
+          content:"";
+          right:0;
+          border-radius:50%;
+        }
+
+        &:last-child:after {
+           box-shadow:none;
+        }
+    
+        &:hover {
+            background-color:#E71B64;
+        }
+    
+        > a {
+          color:#E7E0EB;
+          text-decoration:none;
+          font-size: 1.4em;
+          }
+      }
+    }
+}
+
+/* small screens */
+@media screen and (max-width: 44em) {
+  body {
+    margin:1.5em 0;      
+  }
+    
+  nav[role="full-horizontal"] {
+    ul {
+      padding:0 .5em;    
+    }
+    
+    ul > li {
+      width:100%;
+      padding:.45em .25em;
+      margin:0 0 .55em 0;
+    
+      &:after {
+        box-shadow:none;  
+      }
+    }
+  }
+}
+
