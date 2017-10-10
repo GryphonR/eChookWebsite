@@ -3,7 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,500);
-/* line 5, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,45 +25,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -78,39 +78,40 @@ html,
 body {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 html {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bg.jpg) no-repeat center center fixed;
+  background: url(../img/bg-small-dark.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 body {
   margin: .5em;
   font: 1em 'Oswald', sans-serif;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 .container {
   display: flex;
 }
 
-/* line 37, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 .fixed {
   width: 3.5em;
 }
 
-/* line 40, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 .flex-item {
   flex-grow: 1;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 #title-header {
   width: 100%;
   background: #232020;
@@ -119,31 +120,63 @@ body {
   margin-bottom: 0.2em;
   margin-left: 0.5em;
   margin-right: 0.5em;
+  position: fixed;
+  z-index: 15;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
+#content-background {
+  position: relative;
+  background: #E7E0EB;
+  width: auto;
+  margin-top: 10em;
+  margin-left: 3em;
+  margin-right: 3em;
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  min-height: 90em;
+  text-align: center;
+  align-content: center;
+  padding-top: 3em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+/* line 73, ../sass/screen.scss */
+body {
+  overflow-x: hidden;
+  width: 99%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 82, ../sass/screen.scss */
 #logo {
   position: relative;
   background: #E71B64;
   height: 1.46em;
   text-align: right;
-  border-top-left-radius: 0.2em;
+  border-top-left-radius: 0.05em;
+  border-top-right-radius: 0.05em;
+  border-bottom-left-radius: 0.05em;
   padding-left: 0.7em;
   padding-right: 0.2em;
   top: -0.22em;
+  z-index: 20;
   color: #FFFFFF;
   font: 3.5em 'Oswald', sans-serif;
   text-rendering: optimizelegibility;
   box-shadow: 0.1em 0 0.1em 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 nav[role="full-horizontal"] {
   display: inline-block;
   width: 100%;
   align-items: center;
 }
-/* line 82, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 nav[role="full-horizontal"] ul {
   width: 100%;
   padding-left: 5em;
@@ -152,7 +185,7 @@ nav[role="full-horizontal"] ul {
   list-style-type: none;
   color: transparent;
 }
-/* line 90, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li {
   position: relative;
   float: left;
@@ -167,7 +200,7 @@ nav[role="full-horizontal"] ul > li {
   transition-timing-function: ease-in-out;
   transition-property: background, color, padding, border-radius;
 }
-/* line 106, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li:after {
   position: absolute;
   z-index: -1;
@@ -175,15 +208,15 @@ nav[role="full-horizontal"] ul > li:after {
   right: 0;
   border-radius: 50%;
 }
-/* line 114, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li:last-child:after {
   box-shadow: none;
 }
-/* line 118, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li:hover {
   background-color: #E71B64;
 }
-/* line 122, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li > a {
   color: #E7E0EB;
   text-decoration: none;
@@ -192,23 +225,35 @@ nav[role="full-horizontal"] ul > li > a {
 
 /* small screens */
 @media screen and (max-width: 44em) {
-  /* line 133, ../sass/screen.scss */
+  /* line 160, ../sass/screen.scss */
   body {
     margin: 1.5em 0;
   }
 
-  /* line 138, ../sass/screen.scss */
+  /* line 165, ../sass/screen.scss */
   nav[role="full-horizontal"] ul {
     padding: 0 .5em;
   }
-  /* line 142, ../sass/screen.scss */
+  /* line 169, ../sass/screen.scss */
   nav[role="full-horizontal"] ul > li {
     width: 100%;
     padding: .45em .25em;
     margin: 0 0 .55em 0;
   }
-  /* line 147, ../sass/screen.scss */
+  /* line 174, ../sass/screen.scss */
   nav[role="full-horizontal"] ul > li:after {
     box-shadow: none;
   }
+}
+/* line 182, ../sass/screen.scss */
+#title1 {
+  text-align: center;
+  font: 3.5em 'Oswald', sans-serif;
+  color: #232020;
+}
+
+/* line 188, ../sass/screen.scss */
+.narrow-content {
+  text-align: center;
+  max-width: 30em;
 }
