@@ -19,6 +19,10 @@ h2{
   margin: 0.5em;
 }
 
+p{
+  font-family: 'Cabin:400', sans-serif;
+}
+
 html,
 body {
     width:100%;
@@ -175,7 +179,7 @@ nav[role="full-horizontal"] {
   background: #f9f9f9;
   width: 85%;  
 
-  
+
   margin-top: 10em;
   margin-left: auto;
   margin-right: auto;
@@ -189,7 +193,17 @@ nav[role="full-horizontal"] {
   padding-right: 3em;
   padding-bottom: 20em;
 
+ 
+  overflow:auto;
+
   font: 'Cabin', sans-serif;
+
+  @media screen and (max-width: 500px) {
+    padding-left: 1em;
+    padding-right: 1em;
+
+   
+  }
 }
 
 
@@ -220,7 +234,7 @@ nav[role="full-horizontal"] {
 }
 
 
-.col1, .col2, .col3 {
+.col1{
   width:15em;
   margin-top: 1em;
   margin-left:2em;
@@ -233,7 +247,34 @@ nav[role="full-horizontal"] {
   vertical-align: top;
   display: inline-block;
   *display: inline;
-  zoom: 1
+  zoom: 1;
+
+  @media screen and (max-width: 500px) {
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+.col2{
+  width:15em;
+  margin-top: 1em;
+  margin-left:2em;
+  margin-right:2em;
+  padding: 1em;
+  text-align: left;
+  
+  height: 8em;   
+  
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+
+  @media screen and (max-width: 500px) {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
 }
 
 .stretch {
