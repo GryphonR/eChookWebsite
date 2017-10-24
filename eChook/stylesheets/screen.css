@@ -105,73 +105,112 @@ html {
 
 /* line 41, ../sass/screen.scss */
 body {
-  margin: .5em;
   font: 1em 'Oswald', sans-serif;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 .container {
-  display: flex;
+  width: 100%;
+  text-align: left;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+  font-family: 'Cabin', sans-serif;
 }
 
-/* line 49, ../sass/screen.scss */
-.fixed {
-  width: 3.5em;
-}
-
-/* line 52, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .flex-item {
   flex-grow: 1;
 }
 
-/* line 55, ../sass/screen.scss */
-#title-header {
-  width: 100%;
-  background: #232020;
-  height: 3.6em;
-  margin-top: 1em;
-  margin-bottom: 0.2em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+/*
+#title-header{
+    width: 100%;
+    background: #232020;
+    height: 3.6em;    
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    position: fixed;
+    z-index: 15;
+}
+
+
+
+
+
+#logo{
+    position: relative;
+    background: #E71B64;
+    height: 1.46em;
+    text-align: right;  
+    border-top-left-radius: 0.05em;
+    border-top-right-radius: 0.05em;
+    border-bottom-left-radius: 0.05em;
+    padding-left: 0.7em;
+    padding-right: 0.2em;
+    top: -0.22em;
+    z-index: 20;
+    
+    
+    color: #FFFFFF;
+    font: 3.5em 'Oswald', sans-serif;
+    text-rendering: optimizelegibility;
+    
+    box-shadow:0.1em 0 0.1em 0 rgba(0, 0, 0, .2);
+
+}*/
+/* line 96, ../sass/screen.scss */
+#header-background {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   position: fixed;
-  z-index: 15;
 }
 
-/* line 68, ../sass/screen.scss */
-body {
-  overflow-x: hidden;
-  width: 99%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 77, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #logo {
-  position: relative;
   background: #E71B64;
-  height: 1.46em;
+  width: 3.5em;
   text-align: right;
-  border-top-left-radius: 0.05em;
-  border-top-right-radius: 0.05em;
-  border-bottom-left-radius: 0.05em;
-  padding-left: 0.7em;
-  padding-right: 0.2em;
-  top: -0.22em;
+  padding-right: 0.3em;
+  top: 0px;
   z-index: 20;
   color: #FFFFFF;
-  font: 3.5em 'Oswald', sans-serif;
+  font: 3em 'Oswald', sans-serif;
   text-rendering: optimizelegibility;
   box-shadow: 0.1em 0 0.1em 0 rgba(0, 0, 0, 0.2);
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
+#nav-menu {
+  background: #232020;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 15;
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+/* line 139, ../sass/screen.scss */
+#spacer-div {
+  padding-top: 8em;
+  height: 23em;
+}
+
+/* line 144, ../sass/screen.scss */
 nav[role="full-horizontal"] {
   display: inline-block;
   width: 100%;
   align-items: center;
 }
-/* line 104, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 nav[role="full-horizontal"] ul {
   width: 100%;
   padding-left: 5em;
@@ -180,7 +219,7 @@ nav[role="full-horizontal"] ul {
   list-style-type: none;
   color: transparent;
 }
-/* line 112, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li {
   position: relative;
   float: left;
@@ -195,7 +234,7 @@ nav[role="full-horizontal"] ul > li {
   transition-timing-function: ease-in-out;
   transition-property: background, color, padding, border-radius;
 }
-/* line 128, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li:after {
   position: absolute;
   z-index: -1;
@@ -203,15 +242,15 @@ nav[role="full-horizontal"] ul > li:after {
   right: 0;
   border-radius: 50%;
 }
-/* line 136, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li:last-child:after {
   box-shadow: none;
 }
-/* line 140, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li:hover {
   background-color: #E71B64;
 }
-/* line 144, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 nav[role="full-horizontal"] ul > li > a {
   color: #E7E0EB;
   text-decoration: none;
@@ -220,32 +259,31 @@ nav[role="full-horizontal"] ul > li > a {
 
 /* small screens */
 @media screen and (max-width: 44em) {
-  /* line 155, ../sass/screen.scss */
+  /* line 200, ../sass/screen.scss */
   body {
     margin: 1.5em 0;
   }
 
-  /* line 160, ../sass/screen.scss */
+  /* line 205, ../sass/screen.scss */
   nav[role="full-horizontal"] ul {
     padding: 0 .5em;
   }
-  /* line 164, ../sass/screen.scss */
+  /* line 209, ../sass/screen.scss */
   nav[role="full-horizontal"] ul > li {
     width: 100%;
     padding: .45em .25em;
     margin: 0 0 .55em 0;
   }
-  /* line 169, ../sass/screen.scss */
+  /* line 214, ../sass/screen.scss */
   nav[role="full-horizontal"] ul > li:after {
     box-shadow: none;
   }
 }
-/* line 177, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 #content-background {
-  position: relative;
   background: #f9f9f9;
   width: 85%;
-  margin-top: 10em;
+  /*margin-top: 10em;*/
   margin-left: auto;
   margin-right: auto;
   border-top-left-radius: 1em;
@@ -260,21 +298,28 @@ nav[role="full-horizontal"] ul > li > a {
   font: 'Cabin', sans-serif;
 }
 @media screen and (max-width: 500px) {
-  /* line 177, ../sass/screen.scss */
+  /* line 222, ../sass/screen.scss */
   #content-background {
     padding-left: 1em;
     padding-right: 1em;
   }
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 #title1 {
   text-align: center;
   font: 3.5em 'Oswald', sans-serif;
   color: #232020;
 }
 
-/* line 217, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
+#title1-light {
+  text-align: center;
+  font: 5em 'Oswald', sans-serif;
+  color: #ffffff;
+}
+
+/* line 269, ../sass/screen.scss */
 .narrow-content {
   text-align: center;
   align-content: center;
@@ -285,7 +330,7 @@ nav[role="full-horizontal"] ul > li > a {
   font-family: 'Cabin', sans-serif;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 .container2 {
   width: 100%;
   text-align: centre;
@@ -294,7 +339,7 @@ nav[role="full-horizontal"] ul > li > a {
   font-family: 'Cabin', sans-serif;
 }
 
-/* line 237, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 .col1 {
   width: 15em;
   margin-top: 1em;
@@ -308,14 +353,14 @@ nav[role="full-horizontal"] ul > li > a {
   zoom: 1;
 }
 @media screen and (max-width: 500px) {
-  /* line 237, ../sass/screen.scss */
+  /* line 289, ../sass/screen.scss */
   .col1 {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/* line 258, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 .col2 {
   width: 15em;
   margin-top: 1em;
@@ -330,14 +375,14 @@ nav[role="full-horizontal"] ul > li > a {
   zoom: 1;
 }
 @media screen and (max-width: 500px) {
-  /* line 258, ../sass/screen.scss */
+  /* line 310, ../sass/screen.scss */
   .col2 {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/* line 280, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 .stretch {
   width: 100%;
   display: inline-block;

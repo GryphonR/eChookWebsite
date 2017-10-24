@@ -39,19 +39,22 @@ html {
   }
 
 body {
- margin:.5em;
  font: 1em 'Oswald', sans-serif;
 }
 
 .container{
-    display: flex;
+  width: 100%;
+  
+   text-align: left;
+   -ms-text-justify: distribute-all-lines;
+   text-justify: distribute-all-lines;
+   font-family: 'Cabin', sans-serif;
 }
-.fixed{
-    width: 3.5em;
-}
+
 .flex-item{
     flex-grow: 1;
 }
+/*
 #title-header{
     width: 100%;
     background: #232020;
@@ -65,13 +68,7 @@ body {
 }
 
 
-body {
-  overflow-x: hidden;
-  width: 99%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
+
 
 
 #logo{
@@ -94,6 +91,54 @@ body {
     
     box-shadow:0.1em 0 0.1em 0 rgba(0, 0, 0, .2);
 
+}*/
+
+#header-background{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  position:fixed;
+}
+
+
+
+
+
+
+#logo{
+  background: #E71B64;
+  width:3.5em;
+  text-align: right;  
+  padding-right: 0.3em;
+  top: 0px;
+  z-index: 20;  
+  color: #FFFFFF;
+  font: 3em 'Oswald', sans-serif;
+  text-rendering: optimizelegibility; 
+  box-shadow:0.1em 0 0.1em 0 rgba(0, 0, 0, .2);
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+
+}
+
+#nav-menu{
+  
+  background: #232020;
+  margin-left: auto;
+  margin-right: auto;  
+  z-index: 15;
+
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+#spacer-div{
+  padding-top: 8em;
+  height: 23em;
 }
 
 nav[role="full-horizontal"] {
@@ -175,12 +220,11 @@ nav[role="full-horizontal"] {
 
 
 #content-background{
-  position: relative;
+  
   background: #f9f9f9;
   width: 85%;  
 
-
-  margin-top: 10em;
+  /*margin-top: 10em;*/
   margin-left: auto;
   margin-right: auto;
   border-top-left-radius: 1em;
@@ -192,6 +236,8 @@ nav[role="full-horizontal"] {
   padding-left: 3em;
   padding-right: 3em;
   padding-bottom: 20em;
+
+
 
  
   overflow:auto;
@@ -212,6 +258,12 @@ nav[role="full-horizontal"] {
   text-align: center;
   font: 3.5em 'Oswald', sans-serif;
   color: #232020;
+}
+
+#title1-light{
+  text-align: center;
+  font: 5em 'Oswald', sans-serif;
+  color: #ffffff;
 }
 
 .narrow-content{
