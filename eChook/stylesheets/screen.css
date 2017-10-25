@@ -154,7 +154,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   z-index: 15;
-  padding-top: 0.5em;
+  padding-top: 0.6em;
   vertical-align: middle;
   display: inline-block;
   *display: inline;
@@ -197,7 +197,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   z-index: 15;
-  padding-top: 0.5em;
+  padding-top: 0.2em;
   margin-top: 2em;
   height: 3.8em;
   vertical-align: middle;
@@ -287,8 +287,19 @@ nav[role="full-horizontal"] ul > li > a {
   nav[role="full-horizontal"] ul > li:after {
     box-shadow: none;
   }
+
+  /*Top Menus for small screens*/
+  /* line 246, ../sass/screen.scss */
+  #logo {
+    position: relative;
+  }
+
+  /* line 251, ../sass/screen.scss */
+  #nav-menu {
+    position: relative;
+  }
 }
-/* line 246, ../sass/screen.scss */
+/* line 260, ../sass/screen.scss */
 #content-background {
   background: #f9f9f9;
   width: 85%;
@@ -307,28 +318,28 @@ nav[role="full-horizontal"] ul > li > a {
   font: 'Cabin', sans-serif;
 }
 @media screen and (max-width: 500px) {
-  /* line 246, ../sass/screen.scss */
+  /* line 260, ../sass/screen.scss */
   #content-background {
     padding-left: 1em;
     padding-right: 1em;
   }
 }
 
-/* line 281, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 #title1 {
   text-align: center;
   font: 3.5em 'Oswald', sans-serif;
   color: #232020;
 }
 
-/* line 287, ../sass/screen.scss */
+/* line 301, ../sass/screen.scss */
 #title1-light {
   text-align: center;
   font: 5em 'Oswald', sans-serif;
   color: #ffffff;
 }
 
-/* line 293, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 .narrow-content {
   text-align: center;
   align-content: center;
@@ -339,7 +350,7 @@ nav[role="full-horizontal"] ul > li > a {
   font-family: 'Cabin', sans-serif;
 }
 
-/* line 303, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 .container2 {
   width: 100%;
   text-align: centre;
@@ -348,7 +359,7 @@ nav[role="full-horizontal"] ul > li > a {
   font-family: 'Cabin', sans-serif;
 }
 
-/* line 313, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 .col1 {
   width: 15em;
   margin-top: 1em;
@@ -362,14 +373,14 @@ nav[role="full-horizontal"] ul > li > a {
   zoom: 1;
 }
 @media screen and (max-width: 500px) {
-  /* line 313, ../sass/screen.scss */
+  /* line 327, ../sass/screen.scss */
   .col1 {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/* line 334, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 .col2 {
   width: 15em;
   margin-top: 1em;
@@ -384,14 +395,14 @@ nav[role="full-horizontal"] ul > li > a {
   zoom: 1;
 }
 @media screen and (max-width: 500px) {
-  /* line 334, ../sass/screen.scss */
+  /* line 348, ../sass/screen.scss */
   .col2 {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/* line 356, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 .stretch {
   width: 100%;
   display: inline-block;

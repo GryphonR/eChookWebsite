@@ -102,7 +102,7 @@ body {
   margin-left: auto;
   margin-right: auto;  
   z-index: 15;
-  padding-top:0.5em;
+  padding-top:0.6em;
 
   vertical-align: middle;
   display: inline-block;
@@ -149,7 +149,7 @@ body {
   margin-left: auto;
   margin-right: auto;  
   z-index: 15;
-  padding-top:0.5em;
+  padding-top:0.2em;
   margin-top: 2em;
   height: 3.8em;
 
@@ -240,6 +240,20 @@ nav[role="full-horizontal"] {
       }
     }
   }
+
+  /*Top Menus for small screens*/
+
+  #logo{
+  position: relative;  
+  
+  }
+  
+  #nav-menu{
+    
+    position: relative;
+  }
+
+
 }
 
 

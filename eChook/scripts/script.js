@@ -11,7 +11,7 @@ function init() {
             if (classie.has(headerbar,"topNav")) {
                 classie.remove(headerbar,"topNav");
             }
-        } else {
+        } else if(windowsize > 900){
             
             classie.add(headerlogo,"topLogo");
             classie.add(headerbar,"topNav");
@@ -19,3 +19,9 @@ function init() {
     });
 }
 window.onload = init();
+
+var windowsize = $(window).width();
+
+$(window).resize(function() {
+  windowsize = $(window).width();
+});
