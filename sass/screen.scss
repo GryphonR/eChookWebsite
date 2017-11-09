@@ -2,8 +2,9 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-@import url(../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/bootstrap);
-@import url(../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/bootstrap-compass);
+@import "_customVariables.scss";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap-compass.scss";
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,500|Cabin:400,700);
 
 * {
@@ -50,6 +51,10 @@ body {
 
 .flex-item {}
 
+.navbar-dark {
+  background: #232020;
+}
+
 #header-background {
   display: flex;
   flex-direction: row;
@@ -57,93 +62,14 @@ body {
   position: fixed;
 }
 
-#logo {
+.logo {
   background: #E71B64;
   width: 3.5em;
   text-align: right;
-  padding-right: 0.3em;
-  top: 0;
-  z-index: 20;
-  color: #FFFFFF;
-  font: 3em 'Oswald', sans-serif;
+  padding-right: 0.2em;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5em;
   text-rendering: optimizelegibility;
-  box-shadow: 0.1em 0 0.1em 0 rgba(0, 0, 0, .2);
-  vertical-align: top;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  -webkit-transition: all 0.3;
-  -moz-transition: all 0.3;
-  -ms-transition: all 0.3;
-  -o-transition: all 0.3;
-  transition: all 0.3;
-}
-
-#nav-menu {
-  background: #232020;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 15;
-  padding-top: 0.6em;
-  vertical-align: middle;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  flex-grow: 1;
-  -webkit-transition: all 0.3;
-  -moz-transition: all 0.3;
-  -ms-transition: all 0.3;
-  -o-transition: all 0.3;
-  transition: all 0.3;
-}
-
-.topLogo {
-  background: #E71B64;
-  width: 3.5em;
-  text-align: right;
-  padding-right: 0.1em;
-  padding-left: 0.5em;
-  margin-left: 1em;
-  margin-top: 0.5em;
-  padding-top: -0.2em;
-  padding-bottom: 0.1em;
-  z-index: 20;
-  color: #FFFFFF;
-  font: 3.5em 'Oswald', sans-serif;
-  text-rendering: optimizelegibility;
-  box-shadow: 0 0.1em 0.1em 0 rgba(0, 0, 0, .2);
-  vertical-align: top;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -webkit-transition: all 0.3;
-  -moz-transition: all 0.3;
-  -ms-transition: all 0.3;
-  -o-transition: all 0.3;
-  transition: all 0.3;
-}
-
-.topNav {
-  background: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 15;
-  padding-top: 0.2em;
-  margin-top: 2em;
-  height: 3.8em;
-  vertical-align: middle;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  flex-grow: 1;
-  -webkit-transition: all 0.3;
-  -moz-transition: all 0.3;
-  -ms-transition: all 0.3;
-  -o-transition: all 0.3;
-  transition: all 0.3;
 }
 
 #spacer-div {
@@ -160,13 +86,10 @@ body {
   margin-bottom: 4em;
 }
 
-nav[role="full-horizontal"] {
-  display: inline-block;
-  width: 100%;
+.navbar {
   align-items: center;
 
   ul {
-    width: 100%;
     padding-left: 5em;
     list-style: none;
     display: inline-block;
@@ -174,15 +97,14 @@ nav[role="full-horizontal"] {
     color: rgba(0,0,0,0);
 
     > li {
+      font-size: $font-size-h5;
       position: relative;
       float: left;
-      padding: 0.25em 1em;
-      margin: 0.5em;
       text-transform: uppercase;
       cursor: pointer;
       color: rgba(0,0,0,0);
       text-align: center;
-      border-radius: 0.1em;
+      border-radius: 5em;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
       transition-property: background, color, padding, border-radius;
@@ -243,6 +165,12 @@ nav[role="full-horizontal"] {
 }
 
 #content-background {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+  justify-items: center;
+  grid-row-gap: 15px;
+  grid-column-gap: 20px;
   background: #f9f9f9;
   width: 85%;
   /*margin-top: 10em;*/
@@ -252,12 +180,15 @@ nav[role="full-horizontal"] {
   border-top-right-radius: 1em;
   text-align: center;
   align-content: center;
-  padding: 3em 3em 20em;
-  overflow: auto;
+  padding: 30px 30px 10em;
   font: 'Cabin', sans-serif;
   @media screen and (max-width: 500px) {
     padding-left: 1em;
     padding-right: 1em;
+  }
+
+  > p {
+    font: 1.5em 'Cabin', sans-serif;
   }
 }
 
@@ -285,6 +216,7 @@ nav[role="full-horizontal"] {
 
 #title1 {
   text-align: center;
+  margin: auto;
   font: 3.5em 'Oswald', sans-serif;
   color: #232020;
 }
@@ -314,21 +246,32 @@ nav[role="full-horizontal"] {
   font-family: 'Cabin', sans-serif;
 }
 
+.triplet-container {
+  grid-column: 1/4;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .col1 {
-  width: 15em;
+  max-width: 15em;
   margin-top: 1em;
   margin-left: 2em;
   margin-right: 2em;
   padding: 1em auto;
-  height: 18em;
-  vertical-align: top;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  @media screen and (max-width: 500px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  flex-grow: 1;
+  //height: 18em;
+  // vertical-align: top;
+  // display: inline-block;
+  // *display: inline;
+  // zoom: 1;
+  // @media screen and (max-width: 500px) {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }
 
 .col2 {
@@ -354,4 +297,18 @@ nav[role="full-horizontal"] {
   display: inline-block;
   font-size: 0;
   line-height: 0;
+}
+
+.docsContainer {
+  display: inline-block;
+  left: 0;
+}
+
+.docWindow {
+  position: fixed;
+  top: $navbar-height;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  transform: translateX(-50%);
 }
