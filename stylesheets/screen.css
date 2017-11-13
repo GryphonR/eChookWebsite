@@ -7359,7 +7359,6 @@ body {
       cursor: pointer;
       color: transparent;
       text-align: center;
-      border-radius: 1em;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
       transition-property: background, color, padding, border-radius; }
@@ -7422,11 +7421,11 @@ body {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
+  margin-bottom: 30px;
+  border-radius: 1em;
   text-align: center;
   align-content: center;
-  padding: 30px 30px 10em;
+  padding: 30px;
   font: 'Cabin', sans-serif; }
   @media screen and (max-width: 500px) {
     /* line 165, ../sass/screen.scss */
@@ -7435,43 +7434,54 @@ body {
       padding-right: 1em; } }
 
 /* line 190, ../sass/screen.scss */
-#footer-background {
+#content-background-inverted {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+  justify-items: center;
+  grid-row-gap: 15px;
+  grid-column-gap: 20px;
   background: #232020;
   width: 85%;
-  height: 20em;
   margin-bottom: 3em;
   color: #f9f9f9;
   /*margin-top: 10em;*/
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
+  border-radius: 1em;
   text-align: center;
   align-content: center;
-  padding: 3em 3em 20em;
+  padding: 50px 30px;
   overflow: auto;
   font: 'Cabin', sans-serif; }
   @media screen and (max-width: 500px) {
     /* line 190, ../sass/screen.scss */
-    #footer-background {
+    #content-background-inverted {
       padding-left: 1em;
       padding-right: 1em; } }
 
-/* line 212, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 #title1 {
   text-align: center;
   margin: auto;
   font: 3.5em 'Oswald', sans-serif;
   color: #232020; }
 
-/* line 219, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 #title1-light {
   text-align: center;
   font: 5em 'Oswald', sans-serif;
   color: #ffffff; }
 
-/* line 225, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
+#title1-inverted {
+  text-align: center;
+  margin: auto;
+  font: 3.5em 'Oswald', sans-serif;
+  color: #f9f9f9; }
+
+/* line 237, ../sass/screen.scss */
 .narrow-content {
   text-align: center;
   align-content: center;
@@ -7482,7 +7492,7 @@ body {
   padding-bottom: 1em;
   font-family: 'Cabin', sans-serif; }
 
-/* line 236, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .container2 {
   width: 100%;
   text-align: centre;
@@ -7490,7 +7500,7 @@ body {
   text-justify: distribute-all-lines;
   font-family: 'Cabin', sans-serif; }
 
-/* line 244, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .triplet-container {
   grid-column: 1/4;
   width: 100%;
@@ -7499,11 +7509,15 @@ body {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   justify-content: space-evenly; }
-  /* line 253, ../sass/screen.scss */
+  /* line 265, ../sass/screen.scss */
   .triplet-container div {
     font-size: 14px; }
 
-/* line 258, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
+.inverted {
+  color: #f9f9f9; }
+
+/* line 274, ../sass/screen.scss */
 .col1 {
   max-width: 14em;
   margin-top: 1em;
@@ -7512,7 +7526,7 @@ body {
   padding: 1em auto;
   flex-grow: 1; }
 
-/* line 267, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 .col2 {
   width: 15em;
   margin-top: 1em;
@@ -7526,24 +7540,24 @@ body {
   *display: inline;
   zoom: 1; }
   @media screen and (max-width: 500px) {
-    /* line 267, ../sass/screen.scss */
+    /* line 283, ../sass/screen.scss */
     .col2 {
       margin-left: auto;
       margin-right: auto; } }
 
-/* line 285, ../sass/screen.scss */
+/* line 301, ../sass/screen.scss */
 .stretch {
   width: 100%;
   display: inline-block;
   font-size: 0;
   line-height: 0; }
 
-/* line 292, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .docsContainer {
   display: inline-block;
   left: 0; }
 
-/* line 297, ../sass/screen.scss */
+/* line 313, ../sass/screen.scss */
 .docWindow {
   position: fixed;
   top: 70px;
@@ -7551,3 +7565,44 @@ body {
   width: 100%;
   bottom: 0;
   transform: translateX(-50%); }
+
+/* line 322, ../sass/screen.scss */
+.main-button {
+  color: #f9f9f9 !important;
+  background-color: #3c80c3;
+  border-radius: 5px;
+  text-decoration: none !important;
+  padding: 5px 10px;
+  vertical-align: bottom; }
+  /* line 330, ../sass/screen.scss */
+  .main-button:hover {
+    text-decoration: none !important;
+    background-color: #244d75 !important; }
+
+/* line 336, ../sass/screen.scss */
+.news-background {
+  background: #f9f9f9;
+  width: 85%;
+  /*margin-top: 10em;*/
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+  text-align: justify;
+  padding: 30px 30px 3em;
+  font: 'Cabin', sans-serif;
+  font-size: 14px; }
+  @media screen and (max-width: 500px) {
+    /* line 336, ../sass/screen.scss */
+    .news-background {
+      padding-left: 1em;
+      padding-right: 1em; } }
+
+/* line 354, ../sass/screen.scss */
+.news-title {
+  font-size: 30px; }
+
+/* line 358, ../sass/screen.scss */
+.news-author {
+  font-style: italic;
+  margin-bottom: 2em; }

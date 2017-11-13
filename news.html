@@ -46,10 +46,10 @@
             <li class="">
               <a href="/">Home</a>
             </li>
-            <li class="">
+            <li class="active">
               <a href="/news.html">News</a>
             </li>
-            <li class="active">
+            <li class="">
               <a href="/docs.html">Documentation</a>
             </li>
             <li class="">
@@ -64,9 +64,19 @@
       </div>
     </nav>
 
-    <iframe class="docWindow" frameborder="0" src="https://docs.google.com/document/d/12MMUZwj4w5DUC1TnJMnzvs-AOBMiBQhTdfGyMm6rY0o/edit">
-      iFrame not loading...
-    </iframe>
+    <div id="spacer-div"></div>
+
+    <div class="news-background">
+      <div class="news-title">Welcome to the website!</div>
+      <div class="news-author">by Rowan Griffin, 13/11/17</div>
+      <script>
+        $.get("NewsPosts/Welcome-to-the-website.txt", function (data) {
+          $("#post-one").replaceWith(data);
+        });
+      </script>
+      <div id="post-one"></div>
+
+    </div>
 
   </body>
 </html>

@@ -102,7 +102,7 @@ body {
       cursor                    : pointer;
       color                     : rgba(0,0,0,0);
       text-align                : center;
-      border-radius             : 1em;
+      //border-radius             : 1em;
       transition-duration       : 0.3s;
       transition-timing-function: ease-in-out;
       transition-property       : background, color, padding, border-radius;
@@ -163,46 +163,51 @@ body {
 }
 
 #content-background {
-  display                : grid;
-  grid-template-columns  : repeat(3, 1fr);
-  grid-template-rows     : repeat(5, auto);
-  justify-items          : center;
-  grid-row-gap           : 15px;
-  grid-column-gap        : 20px;
-  background             : #f9f9f9;
-  width                  : 85%;
+  display              : grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows   : repeat(5, auto);
+  justify-items        : center;
+  grid-row-gap         : 15px;
+  grid-column-gap      : 20px;
+  background           : #f9f9f9;
+  width                : 85%;
   /*margin-top: 10em;*/
-  max-width              : 1000px;
-  margin-left            : auto;
-  margin-right           : auto;
-  border-top-left-radius : 1em;
-  border-top-right-radius: 1em;
-  text-align             : center;
-  align-content          : center;
-  padding                : 30px 30px 10em;
-  font                   : 'Cabin', sans-serif;
+  max-width            : 1000px;
+  margin-left          : auto;
+  margin-right         : auto;
+  margin-bottom        : 30px;
+  border-radius        : 1em;
+  text-align           : center;
+  align-content        : center;
+  padding              : 30px;
+  font                 : 'Cabin', sans-serif;
   @media screen and (max-width: 500px) {
     padding-left : 1em;
     padding-right: 1em;
   }
 }
 
-#footer-background {
-  background                : #232020;
-  width                     : 85%;
-  height                    : 20em;
-  margin-bottom             : 3em;
-  color                     : #f9f9f9; /*margin-top: 10em;*/
-  max-width                 : 1000px;
-  margin-left               : auto;
-  margin-right              : auto;
-  border-bottom-left-radius : 1em;
-  border-bottom-right-radius: 1em;
-  text-align                : center;
-  align-content             : center;
-  padding                   : 3em 3em 20em;
-  overflow                  : auto;
-  font                      : 'Cabin', sans-serif;
+#content-background-inverted {
+  display              : grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows   : repeat(5, auto);
+  justify-items        : center;
+  grid-row-gap         : 15px;
+  grid-column-gap      : 20px;
+  background           : #232020;
+  width                : 85%;
+  margin-bottom        : 3em;
+  color                : #f9f9f9;
+  /*margin-top: 10em;*/
+  max-width            : 1000px;
+  margin-left          : auto;
+  margin-right         : auto;
+  border-radius        : 1em;
+  text-align           : center;
+  align-content        : center;
+  padding              : 50px 30px;
+  overflow             : auto;
+  font                 : 'Cabin', sans-serif;
   @media screen and (max-width: 500px) {
     padding-left : 1em;
     padding-right: 1em;
@@ -220,6 +225,13 @@ body {
   text-align: center;
   font      : 5em 'Oswald', sans-serif;
   color     : #ffffff;
+}
+
+#title1-inverted {
+  text-align: center;
+  margin    : auto;
+  font      : 3.5em 'Oswald', sans-serif;
+  color     : #f9f9f9;
 }
 
 .narrow-content {
@@ -253,6 +265,10 @@ body {
   div {
     font-size: $font-size-base;
   }
+}
+
+.inverted {
+  color: #f9f9f9;
 }
 
 .col1 {
@@ -301,4 +317,45 @@ body {
   width    : 100%;
   bottom   : 0;
   transform: translateX(-50%);
+}
+
+.main-button {
+  color           : #f9f9f9 !important;
+  background-color: #3c80c3;
+  border-radius   : 5px;
+  text-decoration : none !important;
+  padding         : 5px 10px;
+  vertical-align  : bottom;
+
+  &:hover {
+    text-decoration : none !important;
+    background-color: darken(#3c80c3, 20%) !important;
+  }
+}
+
+.news-background {
+  background   : #f9f9f9;
+  width        : 85%;
+  /*margin-top: 10em;*/
+  max-width    : 1000px;
+  margin-left  : auto;
+  margin-right : auto;
+  border-radius: 1em;
+  text-align   : justify;
+  padding      : 30px 30px 3em;
+  font         : 'Cabin', sans-serif;
+  font-size    : $font-size-base;
+  @media screen and (max-width: 500px) {
+    padding-left : 1em;
+    padding-right: 1em;
+  }
+}
+
+.news-title {
+  font-size: $font-size-h2;
+}
+
+.news-author {
+  font-style   : italic;
+  margin-bottom: 2em;
 }
