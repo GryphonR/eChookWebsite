@@ -28,52 +28,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
 
-  <body id="body">
+  <script>
+    $.get("nav.html", function (data) {
+      $("#nav-placeholder").replaceWith(data);
+    });
+  </script>
+  <div id="nav-placeholder"></div>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand logo" href="/">eChook</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="">
-              <a href="/">Home</a>
-            </li>
-            <li class="">
-              <a href="/news.html">News</a>
-            </li>
-            <li class="">
-              <a href="/docs.html">Documentation</a>
-            </li>
-            <li class="active">
-              <a href="/data.html">Live Data</a>
-            </li>
-            <li class="">
-              <a href="/support.html">Support</a>
-            </li>
-          </ul>
-        </div>
-        <!--/.nav-collapse -->
-      </div>
-    </nav>
+  <div id="spacer-div"></div>
 
-    <div id="spacer-div"></div>
+  <div class="news-background">
+    <div style="text-align:center" class="news-title">You're Early!</div>
+    <div style="text-align:center">
+      Telemetry is still over at
+      <a href="http://www.dweet.io">dweet.io</a>!<br>
+      Hopefully it will move here before the start of the 2018 season, along with an app update to enable it.
 
-    <div class="news-background">
-      <div style="text-align:center" class="news-title">You're Early!</div>
-      <div style="text-align:center">
-        Telemetry is still over at
-        <a href="http://www.dweet.io">dweet.io</a>!<br>
-        Hopefully it will move here before the start of the 2018 season, along with an app update to enable it.
+    </div>
 
-      </div>
-
-    </body>
-  </html>
+  </body>
+</html>
