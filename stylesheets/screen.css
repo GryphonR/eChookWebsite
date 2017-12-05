@@ -7593,17 +7593,17 @@ li.dropdown {
 
 /* line 348, ../sass/screen.scss */
 .docsContainer {
-  display: inline-block;
-  left: 0; }
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: space-between; }
 
-/* line 353, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .docWindow {
-  position: fixed;
-  top: 70px;
-  height: 100%;
+  position: absolute;
   width: 100%;
-  bottom: 0;
-  transform: translateX(-50%); }
+  height: calc(100% - 70px);
+  bottom: 0; }
 
 /* line 362, ../sass/screen.scss */
 .main-button {
