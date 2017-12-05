@@ -7557,15 +7557,16 @@ li.dropdown {
 
 /* line 313, ../sass/screen.scss */
 .col1 {
+  position: relative;
   max-width: 14em;
-  margin-top: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin: 1em 2em 2em;
   padding: 1em auto;
   flex-grow: 1;
-  font-family: 'Cabin'; }
+  font-family: 'Cabin';
+  width: 200px;
+  height: 250px; }
 
-/* line 323, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 .col2 {
   width: 15em;
   margin-top: 1em;
@@ -7579,46 +7580,53 @@ li.dropdown {
   *display: inline;
   zoom: 1; }
   @media screen and (max-width: 500px) {
-    /* line 323, ../sass/screen.scss */
+    /* line 324, ../sass/screen.scss */
     .col2 {
       margin-left: auto;
       margin-right: auto; } }
 
-/* line 341, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .stretch {
   width: 100%;
   display: inline-block;
   font-size: 0;
   line-height: 0; }
 
-/* line 348, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 .docsContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: space-between; }
 
-/* line 355, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .docWindow {
   position: absolute;
   width: 100%;
   height: calc(100% - 70px);
   bottom: 0; }
 
-/* line 362, ../sass/screen.scss */
+/* line 363, ../sass/screen.scss */
 .main-button {
+  position: absolute;
+  margin-left: 25px;
+  margin-right: 25px;
+  left: 0;
+  width: 150px;
   color: #f9f9f9 !important;
   background-color: #3c80c3;
   border-radius: 5px;
   text-decoration: none !important;
   padding: 5px 10px;
-  vertical-align: bottom; }
-  /* line 370, ../sass/screen.scss */
+  vertical-align: bottom;
+  bottom: 0;
+  transition: background 0.3s; }
+  /* line 378, ../sass/screen.scss */
   .main-button:hover {
     text-decoration: none !important;
-    background-color: #244d75 !important; }
+    background-color: #30669c !important; }
 
-/* line 376, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 .news-background {
   background: #f9f9f9;
   width: 85%;
@@ -7632,21 +7640,21 @@ li.dropdown {
   font: 'Cabin', sans-serif;
   font-size: 14px; }
   @media screen and (max-width: 500px) {
-    /* line 376, ../sass/screen.scss */
+    /* line 384, ../sass/screen.scss */
     .news-background {
       padding-left: 1em;
       padding-right: 1em; } }
 
-/* line 394, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 .news-title {
   font-size: 30px; }
 
-/* line 398, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .news-author {
   font-style: italic;
   margin-bottom: 2em; }
 
-/* line 403, ../sass/screen.scss */
+/* line 411, ../sass/screen.scss */
 .teamPicture {
   background-color: #f9f9f9;
   border: solid 5px #c6c6c6;
