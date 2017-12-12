@@ -488,3 +488,17 @@ li.dropdown {
   margin    : 10px 50px;
   text-align: center;
 }
+
+.slider-item {
+  background-color: #fff;
+  box-shadow      : 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin          : 10px 20px;
+  padding         : 10px;
+}
+
+.slider-text {
+  height        : 30px;
+  font-size     : 20px;
+  vertical-align: middle;
+  margin        : 20px 0 5px;
+}
