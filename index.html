@@ -15,14 +15,13 @@
 
     <title>eChook - Open Source Data Logging and Telemetry</title>
     <meta charset="UTF-8">
-    <title>title</title>
-
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="https://use.fontawesome.com/10386a299c.js"></script>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
     <script type='text/javascript' src="scripts/script.js"></script>
-    <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script type='text/javascript' src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 
     <!-- Slick Carousel -->
@@ -47,15 +46,182 @@
       });
     </script>
 
-    <script>
-      $.get("home.html", function (data) {
-        $("#home-placeholder").replaceWith(data);
-      });
-    </script>
-    <div id="home-placeholder"></div>
+    <head>
+      <!-- Global Site Tag (gtag.js) - Google Analytics -->
+      <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments)
+        };
+        gtag('js', new Date());
 
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
-    <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
-  </body>
+        gtag('config', 'UA-108921096-1');
+      </script>
+    </head>
+
+    <div id="spacer-div"></div>
+
+    <div id="intro-background">
+      <div id="title1-light" style="font-size: 10em">eChook</div>
+      <div class="narrow-content" style="color:#ffffff; font-size: 2em;">Open source data logging and telemetry system designed specifically for Greenpower teams.</div>
+    </div>
+
+    <div class="content-background content-background-grid">
+      <div id="title1" style="grid-row:1; grid-column: 1/4">Three Elements:</div>
+
+      <div class="triplet-container" style="grid-row:2;">
+        <div class="col1">
+          <i class="fa fa-microchip fa-5x" style="color:#e91e63"></i>
+          <h4>Hardware</h4>
+          <div>A custom PCB designed to be soldered together by students.<br>Gathers data from sensors on the car and transmits the readings over Bluetooth to the app.</div>
+          <p style="">
+            <a class="main-button" href="https://github.com/echook">
+              View on Github!
+            </a>
+          </p>
+        </div>
+        <div class="col1">
+          <i class="fa fa-android fa-5x" style="color:#4caf50"></i>
+          <h4>Android App</h4>
+          <div>Connects your Android phone to the eChook board via Bluetooth. Displays data to the driver, logs it to a file, and uploads it to the cloud for Live Data viewing.</div>
+          <p style="">
+            <a class="main-button" href="https://play.google.com/store/apps/details?id=com.ben.drivenbluetooth">
+              Get on Google Play
+            </a>
+          </p>
+          <div style="height=50em"></div>
+        </div>
+        <div class="col1">
+          <i class="fa fa-wifi fa-5x" style="color:#00bcd4"></i>
+          <h4>Live Data</h4>
+          <div>Uses the phones internet connection to send the car's data to the cloud for real-time viewing on a customizable dashboard.</div>
+          <p style="">
+            <a class="main-button" href="https://freeboard.io/board/081s7W">
+              View Live Data
+            </a>
+          </p>
+        </div>
+      </div>
+      <span class="stretch"></span>
+
+      <div style="height:8em"></div>
+
+      <div id="title1" style="grid-row:3; grid-column: 1/4; margin-top: 80px">Log the following data:</div>
+      <div class="triplet-container" style="grid-row:4;">
+        <div class="col2" style="grid-row:4; ">
+          <div>&#8226 Current Total (I)
+            <br>&#8226 Voltage Total (V)
+            <br>&#8226 Voltage Battery 1 (V)<br>&#8226 Voltage Battery 2 (V)<br>&#8226 Amp Hours Used (Ah)<br></div>
+        </div>
+        <div class="col2" style="grid-row:4">
+          <div>&#8226 Throttle Input (%)
+            <br>
+            &#8226 Brake Input (On/Off)<br>&#8226 Motor RPM (RPM)<br>&#8226 Wheel Speed (m/s)<br>&#8226 Distance (m)<br></div>
+        </div>
+        <div class="col2" style="grid-row:4">
+          <div>&#8226 Gear Number and Ratio
+            <br>&#8226 Temperature 1 (°c)<br>&#8226 Temperature 2 (°c)
+            <br>&#8226 GPS Position<br>&#8226 Lap Number</div>
+        </div>
+      </div>
+      <span class="stretch"></span>
+
+      <p style="text-align:center; grid-row:5; visibility:hidden; grid-column: 1/4">And 10 custom fields to log whatever else you want!</p>
+
+      <div id="title1" style="grid-row:6; grid-column: 1/4; margin-top: 80px">How to get Started</div>
+      <div class="triplet-container" style="grid-row:7;">
+        <div class="col1" style="grid-row:7">
+          <i class="fa fa-shopping-cart fa-5x" style="color:#00bcd4"></i>
+          <h4>Buy the Kit</h4>
+          <div>A build it yourself kit contianing PCB, components and sensors will soon be available in the Greenpower store.</div>
+          <p style="">
+            <a class="main-button" href="https://goo.gl/forms/jb9IXXHGGKgLV2ti1">
+              Register Interest Here
+            </a>
+          </p>
+        </div>
+        <div class="col1" style="grid-row:7">
+          <i class="fa fa-wrench fa-5x" style="color:#00bcd4"></i>
+          <h4>Do It Yourself</h4>
+          <div>eChook is Open Source so all the designs are available to build your own from scratch. Check out the documentation to get started.</div>
+          <p style="">
+            <a class="main-button" href="https://drive.google.com/open?id=12MMUZwj4w5DUC1TnJMnzvs-AOBMiBQhTdfGyMm6rY0o">
+              Open Documentation
+            </a>
+          </p>
+        </div>
+        <div class="col1" style="grid-row:7">
+          <i class="fa fa-link fa-5x" style="color:#00bcd4"></i>
+          <h4>Use Existing Hardware</h4>
+          <div>If you already have a data logging system with a USART ability, you can add a BT module and use our app, logging and live data for free!</div>
+          <p style="">
+            <a class="main-button" href="https://drive.google.com/open?id=12MMUZwj4w5DUC1TnJMnzvs-AOBMiBQhTdfGyMm6rY0o">
+              Open Documentation
+            </a>
+          </p>
+        </div>
+      </div>
+      <span class="stretch"></span>
+
+    </div>
+    <div class="content-background-inverted content-background-grid">
+      <div id="title1-inverted" class="inverted" style="grid-row:1; grid-column: 1/4">Meet the Team:</div>
+      <div class="triplet-container" style="grid-row:2; grid-column:1/4;">
+        <div style="grid-row:1; grid-column:1/4; margin-top:10px; margin-bottom:20px">
+          The three of us started late in Greenpower with the JLR Driven Graduate team. We're now too old to race ourselves so have focussed on bringing the data logging we benefitted from while racing to other teams.
+        </div>
+        <div class="col1">
+          <i class="fa fa-user fa-5x teamPicture" style="color:#00bcd4"></i>
+          <h4>Ian Cooper</h4>
+          <div>Joined the Driven Greenpower team in 2012 and caught the bug! Founded the weChook racing team in 2014 and has been known for building dubiously pink cars with very robust electronics ever since.</div>
+          <p style="margin-top:2em"></p>
+        </div>
+        <div class="col1">
+          <i class="fa fa-user fa-5x teamPicture" style="color:#00bcd4"></i>
+          <h4>Rowan Griffin</h4>
+          <div>Joined Driven in 2013 and spent far too much time on greenpower over the next three years. Started developing the first version of what would become the eChook for the Driven team.
+          </div>
+          <p style="margin-top:2em"></p>
+        </div>
+        <div class="col1">
+          <i class="fa fa-user fa-5x teamPicture" style="color:#00bcd4"></i>
+          <h4>Ben Nagy</h4>
+          <div>Joined the Driven team in 2014 and finished implementing the first Arduino-Android data logging system using an Arduino Mega.
+          </div>
+          <p style="margin-top:2em"></p>
+        </div>
+      </div>
+    </div>
+    <div class="content-background">
+      <div id="title1" style="grid-row:1; grid-column: 1/4;">Current eChookers</div>
+
+      <div class="carousel-container">
+        <div class="slider-echookers">
+          <div>
+            <img src="img/echookers/jet.jpg" alt="">
+          </div>
+          <div>
+            <img src="img/echookers/jet.jpg" alt="">
+          </div>
+          <div>
+            <img src="img/echookers/jet.jpg" alt="">
+          </div>
+          <div>
+            <img src="img/echookers/jet.jpg" alt="">
+          </div>
+          <div>
+            <img src="img/echookers/jet.jpg" alt="">
+          </div>
+          <div>
+            <img src="img/echookers/jet.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="slick/slick.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
+  <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
+</body>
 </html>

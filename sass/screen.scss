@@ -208,56 +208,53 @@ li.dropdown {
   display: block;
 }
 
-#content-background {
-  display              : grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows   : repeat(3, auto);
-  justify-items        : center;
-  grid-row-gap         : 0;
-  grid-column-gap      : 20px;
-  background           : #f9f9f9;
-  width                : 85%;
+.content-background {
+  background   : #f9f9f9;
+  width        : 85%;
   /*margin-top: 10em;*/
-  max-width            : 1000px;
-  margin-left          : auto;
-  margin-right         : auto;
-  margin-bottom        : 30px;
-  border-radius        : 1em;
-  text-align           : center;
-  align-content        : center;
-  padding              : 30px;
-  font                 : 'Cabin', sans-serif;
+  max-width    : 1000px;
+  margin-left  : auto;
+  margin-right : auto;
+  margin-bottom: 30px;
+  border-radius: 1em;
+  text-align   : center;
+  align-content: center;
+  padding      : 30px;
+  font         : 'Cabin', sans-serif;
   @media screen and (max-width: 500px) {
     padding-left : 1em;
     padding-right: 1em;
   }
 }
 
-#content-background-inverted {
+.content-background-inverted {
+  background   : #232020;
+  width        : 85%;
+  margin-bottom: 3em;
+  color        : #f9f9f9;
+  /*margin-top: 10em;*/
+  max-width    : 1000px;
+  margin-left  : auto;
+  margin-right : auto;
+  border-radius: 1em;
+  text-align   : center;
+  align-content: center;
+  padding      : 50px 30px;
+  overflow     : auto;
+  font         : 'Cabin', sans-serif;
+  @media screen and (max-width: 500px) {
+    padding-left : 1em;
+    padding-right: 1em;
+  }
+}
+
+.content-background-grid {
   display              : grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows   : repeat(5, auto);
   justify-items        : center;
   grid-row-gap         : 15px;
   grid-column-gap      : 20px;
-  background           : #232020;
-  width                : 85%;
-  margin-bottom        : 3em;
-  color                : #f9f9f9;
-  /*margin-top: 10em;*/
-  max-width            : 1000px;
-  margin-left          : auto;
-  margin-right         : auto;
-  border-radius        : 1em;
-  text-align           : center;
-  align-content        : center;
-  padding              : 50px 30px;
-  overflow             : auto;
-  font                 : 'Cabin', sans-serif;
-  @media screen and (max-width: 500px) {
-    padding-left : 1em;
-    padding-right: 1em;
-  }
 }
 
 #title1 {
@@ -483,4 +480,11 @@ li.dropdown {
   a:hover {
     background-color: darken($brand-primary, 10%);
   }
+}
+
+.carousel-container {
+  width     : auto;
+  max-width : 800;
+  margin    : 10px 50px;
+  text-align: center;
 }

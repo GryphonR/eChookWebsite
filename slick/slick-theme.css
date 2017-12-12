@@ -19,6 +19,10 @@
 .slick-prev,
 .slick-next
 {
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+  
     font-size: 0;
     line-height: 0;
 
@@ -36,7 +40,7 @@
 
     cursor: pointer;
 
-    color: transparent;
+    color: #3c80c3;
     border: none;
     outline: none;
     background: transparent;
