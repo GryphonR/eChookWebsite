@@ -1,55 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments)
-      };
-      gtag('js', new Date());
 
-      gtag('config', 'UA-108921096-1');
-    </script>
-    <title>eChook - Open Source Data Logging and Telemetry</title>
-    <meta charset="UTF-8">
-    <title>title</title>
-
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
-    <script src="https://use.fontawesome.com/10386a299c.js"></script>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
-    <script type='text/javascript' src="scripts/classie.js"></script>
-    <script type='text/javascript' src="scripts/script.js"></script>
-    <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
-    <script type='text/javascript' src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  </head>
-
+<head>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=108921096"></script>
   <script>
-    $.get("nav.html", function (data) {
-      $("#nav-placeholder").replaceWith(data);
-    });
-  </script>
-  <div id="nav-placeholder"></div>
-  <script>
-    $(function () {
-      $('#nav-data').addClass("active");
-    });
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments)
+    };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108921096-1');
   </script>
 
-  <div id="spacer-div"></div>
+  <title>eChook - Open Source Data Logging and Telemetry</title>
+  <meta charset="UTF-8">
+  <title>title</title>
 
-  <div class="news-background">
-    <div style="text-align:center" class="news-title">You're Early!</div>
-    <div style="text-align:center">
-      Telemetry is still over at
-      <a href="http://www.dweet.io">dweet.io</a>!<br>
-      Hopefully it will move here before the start of the 2018 season, along with an app update to enable it.
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
+  <script src="https://use.fontawesome.com/10386a299c.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
+  <script type='text/javascript' src="scripts/classie.js"></script>
+  <script type='text/javascript' src="scripts/script.js"></script>
+  <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script type='text/javascript' src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-  </body>
+<script>
+  $.get("nav.html", function(data) {
+    $("#nav-placeholder").replaceWith(data);
+  });
+</script>
+<div id="nav-placeholder"></div>
+
+<div class="app">
+
+</div>
+
+</body>
+
 </html>
