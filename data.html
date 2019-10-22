@@ -45,15 +45,19 @@
   <div id="welcome-container" class="centred">
     <div id="login-title">Live Data Login</div>
     <div id="past-logins" v-if="pastLogins.length > 0" class="">
-      <div id="pastLogins" v-for="car in pastLogins">
-        <div class="prev-login-bar">
-          {{car.car}}   (Code:{{car.codeObs}})
+      <div id="pastLogins" v-for="(car, i) in pastLogins">
+        <div v-on:click="prevLogin(i)" class="prev-login-bar">
+          {{car.car}}
+          <!-- ({{car.codeObs}}) -->
+        </div>
+        <div v-on:click="clearHistory" id="clear-history" class="">
+          {{clearText}}
         </div>
       </div>
       <div class="login-divider"></div>
     </div>
     <input class="t-input" v-model="teamCode" type="text" name="" placeholder="********" maxlength="8">
-      <div v-on:click="login" class="button submit-button">
+      <div v-on:click="newLogin" class="button " v-bind:class="{'submit-button': validCode}">
       {{loginMessage}}
     </div>
     <div id="get-new-code" class="">

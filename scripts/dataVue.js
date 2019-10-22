@@ -4,7 +4,8 @@ var loginApp = new Vue({
     teamCode: "",
     validCode: 0,
     pastLogins: [],
-    loginMessage: "Enter Team Code"
+    loginMessage: "Enter Team Code",
+    clearText: "Clear History"
   },
   mounted() {
     if (localStorage.logins) {
@@ -19,6 +20,7 @@ var loginApp = new Vue({
       let check = 1;
       if (this.teamCode.length === 0) {
         this.loginMessage = "Enter Team Code";
+        check = 0;
       }
       if (this.teamCode.length < 8 && this.teamCode.length > 0) {
         check = 0;
@@ -29,7 +31,8 @@ var loginApp = new Vue({
         check = 0;
         this.loginMessage = "Invalid Characters (A-Z, 1-9 only)"
       }
-      if (check && this.teamCode.length != 0) {
+
+      if (check) {
         this.loginMessage = "Go!";
       }
       this.validCode = check
@@ -40,7 +43,7 @@ var loginApp = new Vue({
 
   },
   methods: {
-    login: function() {
+    newLogin: function() {
       if (this.validCode) {
         console.log(`Loging in with code ${this.teamCode}`);
         let matched = 0;
@@ -59,6 +62,19 @@ var loginApp = new Vue({
           })
           localStorage.logins = JSON.stringify(this.pastLogins)
         }
+      }
+    },
+    prevLogin: function(i) {
+      let code = this.pastLogins[i].code;
+      console.log(`Login with code: ${code}`);
+    },
+    clearHistory: function() {
+      if (this.clearText === "Clear History") {
+        this.clearText = "Definitely Clear History?";
+      } else {
+        this.clearText = "Clear History"
+        this.pastLogins = [];
+        localStorage.logins = [];
       }
     }
   }
