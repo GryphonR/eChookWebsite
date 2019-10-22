@@ -24,11 +24,12 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
   <link rel="stylesheet" href="stylesheets/data.css" type="text/css">
-  <script type='text/javascript' src="scripts/classie.js"></script>
-  <script type='text/javascript' src="scripts/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script type='text/javascript' src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type='text/javascript' src="scripts/script.js"></script>
+  <script src="https://use.fontawesome.com/10386a299c.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -40,33 +41,31 @@
 </script>
 <div id="nav-placeholder"></div>
 
-<div class="app">
-  <!-- Welcome Unknown User -->
-
+<div id="login-app">
   <div id="welcome-container" class="centred">
     <div id="login-title">Live Data Login</div>
-    <div id="new-user" class="">
-      <h1>Enter Team Code:</h1>
-      <input class="t-input" type="text" name="" placeholder="********" maxlength="8">
-      <div class="button submit-button">
-        Go!
+    <div id="past-logins" v-if="pastLogins.length > 0" class="">
+      <div id="pastLogins" v-for="car in pastLogins">
+        <div class="prev-login-bar">
+          {{car.car}}   (Code:{{car.codeObs}})
+        </div>
       </div>
-      <div id="get-new-code" class="">
-        Don't have a code? Get one here!
-      </div>
+      <div class="login-divider"></div>
     </div>
-    <div id="existing-user" class="">
-
+    <input class="t-input" v-model="teamCode" type="text" name="" placeholder="********" maxlength="8">
+      <div v-on:click="login" class="button submit-button">
+      {{loginMessage}}
     </div>
-    <!-- <div class="" style="height: 40px"> -->
-
+    <div id="get-new-code" class="">
+      Don't have a code? Get one here!
+    </div>
   </div>
 </div>
 
-<!-- Welcome Known User -->
 
 </div>
 
 </body>
+<script type='text/javascript' src="scripts/dataVue.js"></script>
 
 </html>

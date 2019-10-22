@@ -11,6 +11,10 @@ $blue: #087e8b;
   background-color: $light;
 }
 
+#welcome-container h1{
+  font-size: 30px;
+}
+
 #login-title {
   width: 80vw;
   max-width: 500px;
@@ -18,7 +22,7 @@ $blue: #087e8b;
   border-radius: 14px 14px 0 0;
   color: $light;
   background-color: $blue;
-  border-bottom: $dark solid 3px;
+  border-bottom: $dark solid 3px;margin-bottom: 20px;
 }
 
 #new-user {
@@ -33,6 +37,12 @@ $blue: #087e8b;
 
 #get-new-code:hover {
   cursor: pointer;
+}
+
+#login-error{
+margin-bottom: 10px;
+font-size: 15px;
+color: red;
 }
 // Classes
 
@@ -85,4 +95,26 @@ $blue: #087e8b;
 
 .submit-button.active {
   background-color: $green;
+}
+
+.prev-login-bar{
+  padding: 6px;
+  margin: 2px 0;
+  background-color: darken($light, 5%);
+  font-size: 20px;
+  border-top: darken($light, 10%) solid 3px;
+  border-bottom: darken($light, 10%) solid 3px;
+}
+
+.prev-login-bar:hover{
+  border-top: $epink solid 3px;
+  border-bottom: $epink solid 3px;
+  cursor: pointer;
+}
+
+.login-divider{
+  width:auto;
+  height: 3px;
+  background-color: darken($light, 10%);
+  margin: 17px 0;
 }

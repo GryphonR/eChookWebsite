@@ -3,6 +3,9 @@
   max-width: 500px;
   background-color: #F9F9F9; }
 
+#welcome-container h1 {
+  font-size: 30px; }
+
 #login-title {
   width: 80vw;
   max-width: 500px;
@@ -10,7 +13,8 @@
   border-radius: 14px 14px 0 0;
   color: #F9F9F9;
   background-color: #087e8b;
-  border-bottom: #100f0f solid 3px; }
+  border-bottom: #100f0f solid 3px;
+  margin-bottom: 20px; }
 
 #new-user {
   text-align: center; }
@@ -22,6 +26,11 @@
 
 #get-new-code:hover {
   cursor: pointer; }
+
+#login-error {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: red; }
 
 .centred {
   border-radius: 15px;
@@ -62,5 +71,24 @@
 
 .submit-button.active {
   background-color: #065143; }
+
+.prev-login-bar {
+  padding: 6px;
+  margin: 2px 0;
+  background-color: #ececec;
+  font-size: 20px;
+  border-top: #e0e0e0 solid 3px;
+  border-bottom: #e0e0e0 solid 3px; }
+
+.prev-login-bar:hover {
+  border-top: #e71b64 solid 3px;
+  border-bottom: #e71b64 solid 3px;
+  cursor: pointer; }
+
+.login-divider {
+  width: auto;
+  height: 3px;
+  background-color: #e0e0e0;
+  margin: 17px 0; }
 
 /*# sourceMappingURL=data.css.map */
