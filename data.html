@@ -50,14 +50,15 @@
           {{car.car}}
           <!-- ({{car.codeObs}}) -->
         </div>
-        <div v-on:click="clearHistory" id="clear-history" class="">
-          {{clearText}}
-        </div>
+      </div>
+      <div v-on:click="clearHistory" id="clear-history" class="">
+        {{clearText}}
       </div>
       <div class="login-divider"></div>
     </div>
-    <input class="t-input" v-model="teamCode" type="text" name="" placeholder="********" maxlength="8">
-      <div v-on:click="newLogin" class="button " v-bind:class="{'submit-button': validCode}">
+    <!-- <input class="t-input" v-model="teamCode" type="text" name="" placeholder="********" maxlength="8"> -->
+    <input class="t-input" v-on:input="teamCode = $event.target.value" type="text" name="" placeholder="********" maxlength="8">
+    <div v-on:click="newLogin" class="button " v-bind:class="{'submit-button': validCode}">
       {{loginMessage}}
     </div>
     <div id="get-new-code" class="">
