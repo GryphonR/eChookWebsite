@@ -11,7 +11,7 @@ $blue: #087e8b;
   background-color: $light;
 }
 
-#welcome-container h1{
+#welcome-container h1 {
   font-size: 30px;
 }
 
@@ -22,7 +22,8 @@ $blue: #087e8b;
   border-radius: 14px 14px 0 0;
   color: $light;
   background-color: $blue;
-  border-bottom: $dark solid 3px;margin-bottom: 20px;
+  border-bottom: $dark solid 3px;
+  margin-bottom: 20px;
 }
 
 #new-user {
@@ -34,9 +35,11 @@ $blue: #087e8b;
   margin: 5px 8px 30px auto;
   font-size: 13px;
 }
+
 #get-new-code:hover {
   cursor: pointer;
 }
+
 #clear-history {
   text-align: right;
   margin: 5px 8px 0 auto;
@@ -46,14 +49,7 @@ $blue: #087e8b;
 #clear-history:hover {
   cursor: pointer;
 }
-
-#login-error{
-margin-bottom: 10px;
-font-size: 15px;
-color: red;
-}
 // Classes
-
 .centred {
   border-radius: 15px;
   box-shadow: 0 0 5px 0 darken($light, 80%);
@@ -102,14 +98,14 @@ color: red;
 
 .submit-button:hover {
   background-color: darken($epink, 4%);
-   cursor: pointer;
+  cursor: pointer;
 }
 
 .submit-button.active {
   background-color: $epink;
 }
 
-.prev-login-bar{
+.prev-login-bar {
   padding: 6px;
   margin: 2px 0;
   background-color: darken($light, 5%);
@@ -118,14 +114,14 @@ color: red;
   border-bottom: darken($light, 10%) solid 3px;
 }
 
-.prev-login-bar:hover{
+.prev-login-bar:hover {
   border-top: $epink solid 3px;
   border-bottom: $epink solid 3px;
   cursor: pointer;
 }
 
-.login-divider{
-  width:auto;
+.login-divider {
+  width: auto;
   height: 3px;
   background-color: darken($light, 10%);
   margin: 5px 0 17px;

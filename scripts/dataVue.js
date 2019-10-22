@@ -4,8 +4,16 @@ var loginApp = new Vue({
     teamCode: "",
     validCode: 0,
     pastLogins: [],
-    loginMessage: "Enter Team Code",
-    clearText: "Clear History"
+    snippets: {
+      loginMessage: "Enter Team Code",
+      clearText: "Clear History",
+      title: "Live Data Login",
+      codeReq: "Enter Team and Car Details"
+    },
+    screens: {
+      login: 1,
+      register: 0
+    }
   },
   mounted() {
     if (localStorage.logins) {
@@ -16,30 +24,28 @@ var loginApp = new Vue({
   },
   watch: {
     teamCode: function() {
-
       let check = 1;
       if (this.teamCode.length === 0) {
-        this.loginMessage = "Enter Team Code";
+        this.snippets.loginMessage = "Enter Team Code";
         check = 0;
       }
       if (this.teamCode.length < 8 && this.teamCode.length > 0) {
         check = 0;
-        this.loginMessage = "Too Short"
+        this.snippets.loginMessage = "Too Short"
       }
       regexp = /^[A-Za-z0-9]+$/;
       if (this.teamCode.length > 0 && !regexp.test(this.teamCode)) {
         check = 0;
-        this.loginMessage = "Invalid Characters (A-Z, 1-9 only)"
+        this.snippets.loginMessage = "Invalid Characters (A-Z, 1-9 only)"
       }
 
       if (check) {
-        this.loginMessage = "Go!";
+        this.snippets.loginMessage = "Go!";
       }
       this.validCode = check
     }
   },
   computed: {
-    // validCode:
 
   },
   methods: {
@@ -69,13 +75,23 @@ var loginApp = new Vue({
       console.log(`Login with code: ${code}`);
     },
     clearHistory: function() {
-      if (this.clearText === "Clear History") {
-        this.clearText = "Definitely Clear History?";
+      if (this.snippets.clearText === "Clear History") {
+        this.snippets.clearText = "Definitely Clear History?";
       } else {
-        this.clearText = "Clear History"
+        this.snippets.clearText = "Clear History"
         this.pastLogins = [];
         localStorage.logins = [];
       }
+    },
+    toRegistration: function() {
+      this.snippets.title = "Get your codes here!"
+      this.screens.login = 0;
+      this.screens.register = 1;
+    },
+    toLogin: function() {
+      this.snippets.title = "Live Data Login"
+      this.screens.login = 1;
+      this.screens.register = 0;
     }
   }
 })

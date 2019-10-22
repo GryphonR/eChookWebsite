@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="stylesheets/data.css" type="text/css">
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type='text/javascript' src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
   <script type='text/javascript' src="scripts/script.js"></script>
   <script src="https://use.fontawesome.com/10386a299c.js"></script>
@@ -43,34 +43,47 @@
 
 <div id="login-app">
   <div id="welcome-container" class="centred">
-    <div id="login-title">Live Data Login</div>
-    <div id="past-logins" v-if="pastLogins.length > 0" class="">
-      <div id="pastLogins" v-for="(car, i) in pastLogins">
-        <div v-on:click="prevLogin(i)" class="prev-login-bar">
-          {{car.car}}
-          <!-- ({{car.codeObs}}) -->
+    <div id="login-title">{{snippets.title}}</div>
+    <!-- Login Screen -->
+    <div v-if="screens.login">
+      <div id="past-logins" v-if="pastLogins.length > 0" class="">
+        <div id="pastLogins" v-for="(car, i) in pastLogins">
+          <div v-on:click="prevLogin(i)" class="prev-login-bar">
+            {{car.car}}
+            <!-- ({{car.codeObs}}) -->
+          </div>
         </div>
+        <div v-on:click="clearHistory" id="clear-history" class="">
+          {{snippets.clearText}}
+        </div>
+        <div class="login-divider"></div>
       </div>
-      <div v-on:click="clearHistory" id="clear-history" class="">
-        {{clearText}}
+      <!-- <input class="t-input" v-model="teamCode" type="text" name="" placeholder="********" maxlength="8"> -->
+      <input class="t-input" v-on:keyup.enter="newLogin" v-on:input="teamCode = $event.target.value" type="text" name="" placeholder="********" maxlength="8">
+      <div v-on:click="newLogin" class="button" v-bind:class="{'submit-button': validCode}">
+        {{snippets.loginMessage}}
       </div>
-      <div class="login-divider"></div>
+      <div id="get-new-code" v-on:click="toRegistration" class="">
+        Don't have a code? Get one here!
+      </div>
     </div>
-    <!-- <input class="t-input" v-model="teamCode" type="text" name="" placeholder="********" maxlength="8"> -->
-    <input class="t-input" v-on:input="teamCode = $event.target.value" type="text" name="" placeholder="********" maxlength="8">
-    <div v-on:click="newLogin" class="button " v-bind:class="{'submit-button': validCode}">
-      {{loginMessage}}
-    </div>
-    <div id="get-new-code" class="">
-      Don't have a code? Get one here!
+    <!-- New Registration Screen -->
+    <div class="" v-if="screens.register">
+      <div class="">
+        <input type="text" placeholder="Team Name" name="" value="">
+        <input type="text" placeholder="Car Name" name="" value="">
+      </div>
+      <div class="button">
+        {{snippets.codeReq}}
+      </div>
+      <div v-on:click="toLogin" id="get-new-code">
+        Return to Login
+      </div>
     </div>
   </div>
 </div>
-
-
-</div>
-
 </body>
-<script type='text/javascript' src="scripts/dataVue.js"></script>
+<script type='text/javascript' src="scripts/dataVue.js">
+</script>
 
 </html>
