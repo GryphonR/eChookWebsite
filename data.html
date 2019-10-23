@@ -70,9 +70,11 @@
     <!-- New Registration Screen -->
     <div class="" v-if="screens.register">
       <div class="">
-        <input type="text" placeholder="Team Name" name="" value="">
-        <input type="text" placeholder="Car Name" name="" value="">
+        <input class="reg-input" v-on:input="register.team = $event.target.value" v-on:keyup="updateRegText" type="text" placeholder="Team Name" name="" value="" maxlength="40">
+        <br>
+        <input class="reg-input" v-on:input="register.car = $event.target.value" v-on:keyup="updateRegText" type="text" placeholder="Car Name" name="" value="" maxlength="40">
       </div>
+      <div style="height:10px"></div>
       <div class="button">
         {{snippets.codeReq}}
       </div>

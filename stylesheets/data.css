@@ -95,4 +95,10 @@
   background-color: #e0e0e0;
   margin: 5px 0 17px; }
 
+.reg-input {
+  width: 250px;
+  max-width: 80vw;
+  font-size: 20px;
+  margin: 5px auto; }
+
 /*# sourceMappingURL=data.css.map */

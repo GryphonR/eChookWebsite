@@ -13,6 +13,11 @@ var loginApp = new Vue({
     screens: {
       login: 1,
       register: 0
+    },
+    register: {
+      car: "",
+      team: "",
+      valid: 0
     }
   },
   mounted() {
@@ -92,6 +97,18 @@ var loginApp = new Vue({
       this.snippets.title = "Live Data Login"
       this.screens.login = 1;
       this.screens.register = 0;
+    },
+    updateRegText: function() {
+      console.log(`updated`);
+      if (this.register.car.length > 0 && this.register.team.length > 0) {
+        this.snippets.codeReq = "Get Code";
+        this.register.valid = 1;
+      } else {
+        this.snippets.codeReq = "Enter Team and Car Details";
+        this.register.valid = 0;
+
+      }
+
     }
   }
 })

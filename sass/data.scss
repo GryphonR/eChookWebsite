@@ -50,6 +50,7 @@ $blue: #087e8b;
   cursor: pointer;
 }
 // Classes
+
 .centred {
   border-radius: 15px;
   box-shadow: 0 0 5px 0 darken($light, 80%);
@@ -125,4 +126,11 @@ $blue: #087e8b;
   height: 3px;
   background-color: darken($light, 10%);
   margin: 5px 0 17px;
+}
+
+.reg-input {
+  width: 250px;
+  max-width: 80vw;
+  font-size: 20px;
+  margin: 5px auto;
 }
