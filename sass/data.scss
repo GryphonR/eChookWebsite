@@ -1,136 +1,49 @@
-// Variables
-$light: #F9F9F9;
-$epink: rgb(231, 27, 100); //#E71B64; // Identifiers
-$dark: rgb(16,15,15);
-$green: #065143;
-$blue: #087e8b;
+@import "_colours.scss"; // Mobile Management
 
-#welcome-container {
-  width: 80vw;
-  max-width: 500px;
-  background-color: $light;
+.column-light {
+  background-color: #f9f9f9;
+  padding: 1em;
+  margin: 1em auto;
+  border-radius: 10px;
+  max-width: 1000px;
 }
 
-#welcome-container h1 {
-  font-size: 30px;
+.column-accordion-light {
+  background-color: #f9f9f9;
+  margin: 1em;
+  border-radius: 10px;
+  font-family: Cabin 'sans-serif';
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 2em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  //display: inherit;
+}
+@media screen and (max-width: 700px) {
+  .panel {
+    padding: 0;
+  }
 }
 
-#login-title {
-  width: 80vw;
-  max-width: 500px;
-  font-size: 50px;
-  border-radius: 14px 14px 0 0;
-  color: $light;
-  background-color: $blue;
-  border-bottom: $dark solid 3px;
-  margin-bottom: 20px;
-}
-
-#new-user {
+.center {
   text-align: center;
 }
 
-#get-new-code {
-  text-align: right;
-  margin: 5px 8px 30px auto;
-  font-size: 13px;
-}
-
-#get-new-code:hover {
-  cursor: pointer;
-}
-
-#clear-history {
-  text-align: right;
-  margin: 5px 8px 0 auto;
-  font-size: 13px;
-}
-
-#clear-history:hover {
-  cursor: pointer;
-}
-// Classes
-
-.centred {
-  border-radius: 15px;
-  box-shadow: 0 0 5px 0 darken($light, 80%);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.t-input {
-  // width: 300px;
-  max-width: 80vw;
-  border: 3px solid $epink;
-  border-radius: 5px;
-  // box-shadow: 0 0 16px rgba(0,0,0,0.1);
-  // background: rgba(255,255,255,0.5);
-  margin: 0 auto 15px;
-  padding: 10px;
-  font-size: 40px;
-  width: 300px;
+.dataContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr, 10%;
+  grid-auto-flow: row;
+  column-gap: 10px;
   text-align: center;
-  color: $epink;
-  font-weight: bold;
-  text-transform: uppercase;
+  margin: 1em;
 }
-
-.button {
-  padding: 10px 5px;
-  margin: auto;
-  // width: 40px;
-  box-shadow: 0 0 1px 0 darken($light, 20%);
-  font-size: 20px;
-  background-color: $green;
-  color: $light;
-  user-select: none;
-}
-
-.button:hover {
-  //
-}
-
-.submit-button {
-  background-color: $epink;
-  color: $light;
-}
-
-.submit-button:hover {
-  background-color: darken($epink, 4%);
-  cursor: pointer;
-}
-
-.submit-button.active {
-  background-color: $epink;
-}
-
-.prev-login-bar {
-  padding: 6px;
-  margin: 2px 0;
-  background-color: darken($light, 5%);
-  font-size: 20px;
-  border-top: darken($light, 10%) solid 3px;
-  border-bottom: darken($light, 10%) solid 3px;
-}
-
-.prev-login-bar:hover {
-  border-top: $epink solid 3px;
-  border-bottom: $epink solid 3px;
-  cursor: pointer;
-}
-
-.login-divider {
-  width: auto;
-  height: 3px;
-  background-color: darken($light, 10%);
-  margin: 5px 0 17px;
-}
-
-.reg-input {
-  width: 250px;
-  max-width: 80vw;
-  font-size: 20px;
-  margin: 5px auto;
+@media screen and (max-width: 700px) {
+  .column-light,
+  .dataContainer {
+    margin: 1em 0;
+  }
 }
