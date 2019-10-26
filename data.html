@@ -92,45 +92,29 @@
   <template v-if="active">
     <div style="height:70px"></div>
     <div class="dataContainer column-accordion-light active">
-      <button class="accordion">
-        <strong>Numerical Data</strong>
-      </button>
-      <div class="panel">
-        <div class="column-light">
-          <div class="numbers-container">
-            <div v-for="x in latest" class="num-background num-grid">
+      <div class="accordion" v-bind:class="{active: views.numerical.active}" v-on:click="views.numerical.active = !views.numerical.active">
+        Numbers
+      </div>
+      <div class="panel" v-if="views.numerical.active">
+        <div class="numbers-container column-light">
+          <template v-for="(x,key) in latest">
+            <div v-if="x.show" class="num-background num-grid">
+              <div class="bkg-graph graphRed" v-bind:class="{graphGreen:x.value<=x.high&&x.value>=x.low}" v-bind:style="{height: (x.value/x.max)*100+'%'}">
+
+              </div>
               <div class="num-title">{{x.title}}</div>
-              <div id="Current" class="num-large num">{{x.value}}</div>
+              <div id="Current" class="num-large"><strong>{{x.value}}</strong></div>
               <div class="num-unit">{{x.unit}}</div>
             </div>
-
-            <div class=" lap-info">
-              <div style="grid-row: 1; grid-column: 1">Lap #</div>
-              <div style="grid-row: 1; grid-column: 2">Time</div>
-              <div style="grid-row: 1; grid-column: 3">Voltage</div>
-              <div style="grid-row: 1; grid-column: 4">Current</div>
-              <div style="grid-row: 1; grid-column: 5">Speed</div>
-              <div style="grid-row: 1; grid-column: 6">RPM</div>
-              <div style="grid-row: 1; grid-column: 7">Amp Hours</div>
-
-              <div class="table-head" id="LLLap" style="grid-row: 2; grid-column: 1"></div>
-              <div class="table-head" id="LLTime" style="grid-row: 2; grid-column: 2"></div>
-              <div class="table-head" id="LLVolts" style="grid-row: 2; grid-column: 3"></div>
-              <div class="table-head" id="LLCurrent" style="grid-row: 2; grid-column: 4"></div>
-              <div class="table-head" id="LLSpeed" style="grid-row: 2; grid-column: 5"></div>
-              <div class="table-head" id="LLRPM" style="grid-row: 2; grid-column: 6"></div>
-              <div class="table-head" id="LLAH" style="grid-row: 2; grid-column: 7"></div>
-
-            </div>
-          </div>
+          </template>
         </div>
       </div>
     </div>
 
     <div class="dataContainer column-accordion-light active">
-      <button class="accordion">
+      <div class="accordion" v-bind:class="{active: views.graph.active}" v-on:click="views.graph.active = !views.graph.active">
         <strong>Graph</strong>
-      </button>
+      </div>
       <div class="panel">
         <div class="dataHeading"></div>
 
@@ -143,9 +127,9 @@
     </div>
 
     <div class="dataContainer column-accordion-light active">
-      <button class="accordion">
+      <div class="accordion" v-bind:class="{active: views.map.active}" v-on:click="views.map.active = !views.map.active">
         <strong id="MapTitle">Map</strong>
-      </button>
+      </div>
       <div class="panel map-boarder">
         <div id="map"></div>
         <div class="desktop">

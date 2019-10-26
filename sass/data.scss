@@ -1,7 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,500|Cabin:400,700|Roboto+Slab);
 @import "_colours.scss"; // Mobile Management
 
 .column-light {
-  background-color: #f9f9f9;
+  // background-color: $green;
+  background-color: $light;
   padding: 1em;
   margin: 1em auto;
   border-radius: 10px;
@@ -14,17 +16,150 @@
   border-radius: 10px;
   font-family: Cabin 'sans-serif';
 }
+// Accordian Headers
+
+.accordion {
+  // font-family: Cabin 'sans-serif';
+  background-color: $blue;
+  color: $light;
+  padding: 5px 30px;
+  font-size: 20px;
+  // font-family: Roboto 'sans-serif';
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion.active,
+.accordion:hover {
+  background-color: $blue;
+  color: #f9f9f9;
+}
+
+.accordion.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+//numbers graph
+
+.bkg-graph {
+  position: absolute;
+  background-color: $graph-red;
+  // height: 50%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
+  background-color: $graph-red;
+  transition: 0.5s;
+}
+
+.graphRed {}
+
+.graphGreen {
+  background-color: lighten($graph-green, 30%);
+}
+// Numberical data styles:
+
+.numbers-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.num-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  justify-items: center;
+  // height: 7em;
+}
+
+.num-background {
+  position: relative;
+  color: black;
+  background-color: darken(#f9f9f9, 10%);
+  border-radius: 5px;
+  margin: auto;
+  border-width: medium;
+  border-color: darken(#f9f9f9, 30%);
+  border-style: solid;
+  margin: 10px 10px auto;
+  vertical-align: middle;
+  flex-basis: 140px;
+  flex-grow: 1.1;
+  flex-shrink: 0.5;
+  max-width: 200px;
+}
+
+.num-background:hover {
+  border-color: $blue;
+  background-color: darken($light, 7%);
+}
+
+.num-title {
+  background-color: darken($light, 10%);
+  border-radius: 0 0 4px 4px;
+  padding: 0 20px;
+  z-index: 3;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 15px;
+}
+
+.num-large {
+  z-index: 3;
+  grid-row: 2;
+  grid-column: 1;
+  font-size: 40px;
+}
+
+.num-unit {
+  z-index: 3;
+  grid-row: 3;
+  grid-column: 1;
+  font-size: 15px;
+}
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-  padding: 0 2em;
-  max-height: 0;
+  padding: 0 20px;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  //display: inherit;
 }
 @media screen and (max-width: 700px) {
   .panel {
     padding: 0;
+  }
+
+  .num-title {}
+
+  .num-unit {}
+
+  .num-grid {}
+
+  .num-background {
+    border-radius: 5px;
+    margin: auto;
+    border-width: thick;
+    border-color: darken(#f9f9f9, 30%);
+    border-style: solid;
+    padding: 3px;
+    margin: 5px 5px auto;
+    vertical-align: middle;
+    flex-basis: 70px;
+    flex-grow: 1.1;
+    flex-shrink: 0.5;
+  }
+
+  .num-large {
+    font-size: 1.7em;
   }
 }
 
