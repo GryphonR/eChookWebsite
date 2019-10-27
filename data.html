@@ -94,6 +94,13 @@
     <div class="dataContainer column-accordion-light active">
       <div class="accordion" v-bind:class="{active: views.numerical.active}" v-on:click="views.numerical.active = !views.numerical.active">
         Numbers
+        <div class="num-overview" v-if="!views.numerical.active">
+          {{latest.vTotal.value}}V
+          {{latest.current.value}}A
+          {{latest.speed.value}}{{latest.speed.unit}}
+          {{latest.rpm.value}}RPM
+          Lap:{{latest.lap.value}}
+        </div>
       </div>
       <div class="panel" v-if="views.numerical.active">
         <div class="numbers-container column-light">

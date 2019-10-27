@@ -1,7 +1,7 @@
 var dataApp = new Vue({
   el: '#data-app',
   data: {
-    active: true,
+    active: false,
     views: {
       numerical: {
         active: true
@@ -19,7 +19,7 @@ var dataApp = new Vue({
         value: 24,
         low: 20,
         high: 24,
-        max: 35,
+        max: 34,
         min: 15,
         unit: "Volts",
         show: true
@@ -28,8 +28,8 @@ var dataApp = new Vue({
         title: "Upper Battery",
         value: 12,
         low: 10,
-        high: 14,
-        max: 20,
+        high: 17,
+        max: 17,
         min: 0,
         unit: "Volts",
         show: true
@@ -38,8 +38,8 @@ var dataApp = new Vue({
         title: "Lower Battery",
         value: 12,
         low: 10,
-        high: 14,
-        max: 20,
+        high: 17,
+        max: 17,
         min: 0,
         unit: "Volts",
         show: true
@@ -89,9 +89,49 @@ var dataApp = new Vue({
         value: 17,
         low: 0,
         high: 50,
-        max: 100,
+        max: 70,
         min: 0,
         unit: "°c",
+        show: true
+      },
+      tempTwo: {
+        title: "Temperature 2",
+        value: 27,
+        low: 0,
+        high: 50,
+        max: 70,
+        min: 0,
+        unit: "°c",
+        show: true
+      },
+      ah: {
+        title: "Amp Hours Used",
+        value: 4,
+        low: 0,
+        high: 25,
+        max: 34,
+        min: 0,
+        unit: "Ah",
+        show: true
+      },
+      brake: {
+        title: "Brake",
+        value: 0,
+        low: 0,
+        high: 0,
+        max: 1,
+        min: 0,
+        unit: "",
+        show: true
+      },
+      lap: {
+        title: "Lap Number",
+        value: 2,
+        low: 0,
+        high: 70,
+        max: 70,
+        min: 0,
+        unit: "",
         show: true
       },
 

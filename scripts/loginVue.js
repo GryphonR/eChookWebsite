@@ -1,7 +1,7 @@
 var loginApp = new Vue({
   el: '#login-app',
   data: {
-    active: false,
+    active: true,
     teamCode: "",
     validCode: 0,
     pastLogins: [],
@@ -91,12 +91,15 @@ var loginApp = new Vue({
           })
           localStorage.logins = JSON.stringify(this.pastLogins);
           this.active = false;
+          dataApp.active = true;
         }
       }
     },
     prevLogin: function(i) {
       let code = this.pastLogins[i].code;
       console.log(`Login with code: ${code}`);
+      this.active = false;
+      dataApp.active = true;
     },
     clearHistory: function() {
       if (this.snippets.clearText === "Clear History") {

@@ -37,6 +37,12 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0; }
 
+.num-overview {
+  display: inline-block;
+  padding-left: 30px;
+  width: 80%;
+  text-align: center; }
+
 .bkg-graph {
   position: absolute;
   background-color: #c54435;
