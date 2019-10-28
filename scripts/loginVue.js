@@ -51,6 +51,11 @@ var loginApp = new Vue({
         text = "Invalid Characters (A-Z, 1-9 only)"
       }
 
+      if (this.teamCode.toLowerCase() === "teamcode") {
+        check = 0;
+        text = "Smartass :)"
+      }
+
       if (check) {
         text = "Go!";
       }
