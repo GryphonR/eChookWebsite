@@ -105,13 +105,12 @@
       <div class="panel" v-if="views.numerical.active">
         <div class="numbers-container column-light">
           <template v-for="(x,key) in latest">
-            <div v-if="x.show" class="num-background num-grid">
-              <div class="bkg-graph graphRed" v-bind:class="{graphGreen:x.value<=x.high&&x.value>=x.low}" v-bind:style="{height: (x.value/x.max)*100+'%'}">
-
-              </div>
+            <div v-if="x.show" class="num-background">
+              <!-- <div v-if="x.show" class="num-background num-grid"> -->
               <div class="num-title">{{x.title}}</div>
               <div id="Current" class="num-large"><strong>{{x.value}}</strong></div>
               <div class="num-unit">{{x.unit}}</div>
+              <div class="bkg-graph graphRed" v-bind:class="{graphGreen:x.value<=x.high&&x.value>=x.low}" v-bind:style="{height: ((x.value/x.max)*100).toFixed(1)+'%'}"> </div>
             </div>
           </template>
         </div>
