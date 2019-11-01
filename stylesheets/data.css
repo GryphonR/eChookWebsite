@@ -113,7 +113,6 @@
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-  padding: 0 20px;
   overflow: hidden; }
 
 @media screen and (max-width: 700px) {
@@ -146,6 +145,14 @@
   column-gap: 10px;
   text-align: center;
   margin: 1em; }
+
+.dataGraph {
+  grid-column: 1;
+  width: inherit;
+  margin: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 80vh; }
 
 @media screen and (max-width: 700px) {
   .column-light,

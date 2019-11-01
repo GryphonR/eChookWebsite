@@ -94,6 +94,7 @@
     <div class="dataContainer column-accordion-light active">
       <div class="accordion" v-bind:class="{active: views.numerical.active}" v-on:click="views.numerical.active = !views.numerical.active">
         Numbers
+        <!-- Numbers in title bar when view is inactive -->
         <div class="num-overview" v-if="!views.numerical.active">
           {{latest.vTotal.value}}V
           {{latest.current.value}}A
@@ -103,7 +104,7 @@
         </div>
       </div>
       <div class="panel" v-if="views.numerical.active">
-        <div class="numbers-container column-light">
+        <div class="numbers-container column-accordion-light">
           <template v-for="(x,key) in latest">
             <div v-if="x.show" class="num-background">
               <!-- <div v-if="x.show" class="num-background num-grid"> -->
@@ -116,6 +117,32 @@
         </div>
       </div>
     </div>
+    <!-- Lap Table + graphs -->
+    <div class="dataContainer column-accordion-light active">
+      <div class="accordion" v-bind:class="{active: views.laps.active}" v-on:click="views.laps.active = !views.laps.active">
+        Laps
+      </div>
+      <div class="panel" v-if="views.laps.active">
+        <div class="numbers-container column-accordion-light">
+          <template v-for="(session,key) in sessions">
+            <div class="">
+              {{session.start}}, {{session.finish}}
+            </div>
+            <template v-for="lap in session.laps">
+              <div class="">
+                number: {{lap.lap}}
+                current: {{lap.i}}
+                voltage: {{lap.v}}
+              </div>
+            </template>
+
+          </template>
+        </div>
+        <div class="">
+          All times are approximate - please refer to official Greenpower timings.
+        </div>
+      </div>
+    </div>
 
     <div class="dataContainer column-accordion-light active">
       <div class="accordion" v-bind:class="{active: views.graph.active}" v-on:click="views.graph.active = !views.graph.active">
@@ -125,7 +152,7 @@
         <div class="dataHeading"></div>
 
         <div class="dataGraph">
-          <canvas id="voltageChart" width="400" height="100"></canvas>
+          <canvas ref="main-graph" id="voltageChart" width="400" height="100"></canvas>
         </div>
         <div class="center">Click on the graph legend to show and hide signals</div>
         <div style="height:10px"></div>
@@ -174,8 +201,9 @@
   </template>
 </div>
 </body>
-<script type='text/javascript' src="scripts/loginVue.js">
-</script>
+<script type='text/javascript' src="scripts/loginVue.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+<script type='text/javascript' src="scripts/graphConfig.js"></script>
 <script type='text/javascript' src="scripts/dataVue.js"></script>
 
 </html>

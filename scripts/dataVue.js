@@ -6,6 +6,9 @@ var dataApp = new Vue({
       numerical: {
         active: true
       },
+      laps: {
+        active: true
+      },
       graph: {
         active: true
       },
@@ -135,9 +138,43 @@ var dataApp = new Vue({
         show: true
       },
 
+    },
+    sessions: [{
+      start: 'time',
+      finish: 'time',
+      laps: [{
+          lap: 1,
+          v: 23.5,
+          i: 20
+        },
+        {
+          lap: 2,
+          v: 22,
+          i: 19
+        },
+        {
+          lap: 3,
+          v: 21,
+          i: 18
+        },
+      ]
+    }, ]
+  },
+  watch: {
+    active: function() {
+      if (this.active) {
+        setTimeout(() => this.activateGraph(), 200); //Gives time for the canvas element to be loaded to the DOM before placing graph
+      }
     }
   },
   computed: {
 
+  },
+  methods: {
+    activateGraph: function() {
+      var voltageChartCtx = document.getElementById("voltageChart").getContext('2d');
+      var voltageChart = new Chart(voltageChartCtx, graphConfig);
+    }
   }
+
 })
