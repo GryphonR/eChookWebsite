@@ -88,7 +88,7 @@
   </template>
 </div>
 <!-- data app ---------------------------------------------------------->
-<div id="data-app">
+<div id="data-app" style="text-align:center">
   <template v-if="active">
     <div style="height:70px"></div>
     <div class="dataContainer column-accordion-light active">
@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="panel" v-if="views.numerical.active">
-        <div class="numbers-container column-accordion-light">
+        <div class="numbers-container column-light">
           <template v-for="(x,key) in latest">
             <div v-if="x.show" class="num-background">
               <!-- <div v-if="x.show" class="num-background num-grid"> -->
@@ -125,16 +125,18 @@
       <div class="panel" v-if="views.laps.active">
         <div class="numbers-container column-accordion-light">
           <template v-for="(session,key) in sessions">
-            <div class="">
-              {{session.start}}, {{session.finish}}
+            <div class="session-title">
+              Session {{key+1}} - {{session.start.toLocaleString()}}
             </div>
-            <template v-for="lap in session.laps">
-              <div class="">
-                number: {{lap.lap}}
-                current: {{lap.i}}
-                voltage: {{lap.v}}
-              </div>
-            </template>
+            <div class="session-laps-background">
+
+              <template v-for="lap in session.laps">
+                <div class="lap-bar">
+                  Lap {{lap.lap}}
+                  Averages: {{lap.v}}V, {{lap.i}}A, {{lap.RPM}}RPM, {{lap.speed}}MPH in {{lap.time}}
+                </div>
+              </template>
+            </div>
 
           </template>
         </div>
@@ -145,10 +147,10 @@
     </div>
 
     <div class="dataContainer column-accordion-light active">
-      <div class="accordion" v-bind:class="{active: views.graph.active}" v-on:click="views.graph.active = !views.graph.active">
+      <div class="accordion" v-bind:class="{active: views.graph.active}" v-on:click="views.graph.active = !views.graph.active" :click="activateGraph">
         <strong>Graph</strong>
       </div>
-      <div class="panel">
+      <div class="panel" v-if="views.graph.active">
         <div class="dataHeading"></div>
 
         <div class="dataGraph">

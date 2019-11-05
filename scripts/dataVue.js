@@ -145,17 +145,26 @@ var dataApp = new Vue({
       laps: [{
           lap: 1,
           v: 23.5,
-          i: 20
+          i: 20,
+          rpm: 1800,
+          speed: 20,
+          time: "1m20s"
         },
         {
           lap: 2,
           v: 22,
-          i: 19
+          i: 19,
+          rpm: 1800,
+          speed: 20,
+          time: "1m20s"
         },
         {
           lap: 3,
           v: 21,
-          i: 18
+          i: 18,
+          rpm: 1800,
+          speed: 20,
+          time: "1m20s"
         },
       ]
     }, ]
@@ -164,7 +173,11 @@ var dataApp = new Vue({
     active: function() {
       if (this.active) {
         setTimeout(() => this.activateGraph(), 200); //Gives time for the canvas element to be loaded to the DOM before placing graph
+        this.sessions[0].start = new Date();
       }
+    },
+    views: function() {
+      if (views.graph.active) setTimeout(() => this.activateGraph(), 200); //Gives time for the canvas element to be loaded to the DOM before placing graph
     }
   },
   computed: {
