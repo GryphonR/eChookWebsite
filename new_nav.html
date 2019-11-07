@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="css/nav.css" type="text/css">
   <div id="navVue">
 
-  <div class="nav-container nav-height">
+  <div class="nav-container nav-height" v-bind:class="{'nav-container-small': scrolled }">
 
       <!-- <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,10 +15,11 @@
           <span class="icon-bar"></span>
         </button>
       </div> -->
-      <a class="logo-large nav-height" href="/">eChook</a>
-      <div class="menu-holder nav-height">
-        <div v-for="x in nav" class="nav-item">
-            <a v-bind:href="x.link" target="_blank">{{x.name}}</a>
+      <a class="logo nav-height" v-bind:class="{ 'logo-small': scrolled, 'logo-large':!scrolled }" href="/">{{logoText}}</a>
+      <div class="menu-holder nav-height" v-bind:class="{ 'menu-holder-small': scrolled }">
+        <div v-for="x in nav" class="nav-item" v-bind:class="{ 'nav-item-small': scrolled }">
+            <a v-bind:href="x.link" target="_blank"><p>
+            {{x.name}}</p></a>
         </div>
     </div>
 
