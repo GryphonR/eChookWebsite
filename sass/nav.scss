@@ -1,0 +1,72 @@
+@import "_colours.scss";
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,500|Cabin:400,700);
+
+.nav-height {
+  height: 70px;
+  max-height: 70px;
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: $dark;
+}
+
+.logo-large {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 150px;
+  background-color: $epink;
+  color: $light;
+  text-align: right;
+  font-size: 50px;
+  text-decoration: none;
+  padding-right: 0.2em;
+  font-family: 'Oswald', sans-serif;
+  text-rendering: optimizelegibility;
+}
+
+.menu-holder {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 180px;
+}
+
+.nav-item {
+  flex: 1;
+  font-size: 20px;
+  // top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  color: $light;
+  text-align: center;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-property: background, color;
+  font-family: 'Cabin:400', sans-serif;
+  vertical-align: middle;
+  // padding-top: 25px;
+  // padding-bottom: 25px;
+  white-space: nowrap;
+  padding: 23px 5px;
+  margin: auto 10px;
+
+  &:hover {
+    background-color: #E71B64;
+  }
+
+  > a {
+    height: 100%;
+    color: #E7E0EB;
+    text-decoration: none;
+    margin: auto;
+    // margin: 20px 20px auto;
+  }
+}

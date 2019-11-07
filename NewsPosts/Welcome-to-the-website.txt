@@ -1,6 +1,0 @@
-After playing with lots of different ideas, we finally have a website! Currently under construction, but getting there.
-<br>At the moment it hosts the basic infomation on the project and the documentation. I am currently working on
-integrating the telemetry aspect of eChook to bring that in house, and also to host our own forum, probably
-based on Vanilla which will be familliar to any greenpower afficianado!
-<br><br>
-If you've found your way here, welcome, have a poke around, and when you find something broken, get in touch through the slack channel or forum :)
