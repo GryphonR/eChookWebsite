@@ -87,23 +87,28 @@
     </div>
   </template>
 </div>
+
+
+
+
 <!-- data app ---------------------------------------------------------->
 <div id="data-app" style="text-align:center">
   <template v-if="active">
     <div style="height:70px"></div>
     <div class="dataContainer column-accordion-light active">
-      <div class="accordion" v-bind:class="{active: views.numerical.active}" v-on:click="views.numerical.active = !views.numerical.active">
-        Numbers
+      <!-- <div class="accordion " v-bind:class="{active: views.numerical.active}" v-on:click="views.numerical.active = !views.numerical.active"> -->
+      <div class="accordion active">
+        Dashboard
         <!-- Numbers in title bar when view is inactive -->
-        <div class="num-overview" v-if="!views.numerical.active">
-          {{latest.vTotal.value}}V
+        <!-- <div class="num-overview" v-if="!views.numerical.active"> -->
+          <!-- {{latest.vTotal.value}}V
           {{latest.current.value}}A
           {{latest.speed.value}}{{latest.speed.unit}}
           {{latest.rpm.value}}RPM
-          Lap:{{latest.lap.value}}
-        </div>
+          Lap:{{latest.lap.value}} -->
+        <!-- </div> -->
       </div>
-      <div class="panel" v-if="views.numerical.active">
+      <!-- <div class="panel" v-if="views.numerical.active"> -->
         <div class="numbers-container column-light">
           <template v-for="(x,key) in latest">
             <div v-if="x.show" class="num-background">
@@ -114,15 +119,18 @@
               <div class="bkg-graph graphRed" v-bind:class="{graphGreen:x.value<=x.high&&x.value>=x.low}" v-bind:style="{height: ((x.value/x.max)*100).toFixed(1)+'%'}"> </div>
             </div>
           </template>
+          <button v-on:click="getData">Get Data</button>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
     <!-- Lap Table + graphs -->
     <div class="dataContainer column-accordion-light active">
-      <div class="accordion" v-bind:class="{active: views.laps.active}" v-on:click="views.laps.active = !views.laps.active">
+      <!-- <div class="accordion" v-bind:class="{active: views.laps.active}" v-on:click="views.laps.active = !views.laps.active"> -->
+      <div class="accordion active">
         Laps
       </div>
-      <div class="panel" v-if="views.laps.active">
+      <!-- <div class="panel" v-if="views.laps.active"> -->
+      <div class="panel">
         <div class="numbers-container column-accordion-light">
           <template v-for="(session,key) in sessions">
             <div class="session-title">
@@ -147,10 +155,11 @@
     </div>
 
     <div class="dataContainer column-accordion-light active">
-      <div class="accordion" v-bind:class="{active: views.graph.active}" v-on:click="views.graph.active = !views.graph.active" :click="activateGraph">
+      <!-- <div class="accordion " v-bind:class="{active: views.graph.active}" v-on:click="views.graph.active = !views.graph.active" :click="activateGraph"> -->
+      <div class="accordion active">
         <strong>Graph</strong>
       </div>
-      <div class="panel" v-if="views.graph.active">
+      <div class="panel">
         <div class="dataHeading"></div>
 
         <div class="dataGraph">
@@ -162,7 +171,8 @@
     </div>
 
     <div class="dataContainer column-accordion-light active">
-      <div class="accordion" v-bind:class="{active: views.map.active}" v-on:click="views.map.active = !views.map.active">
+      <!-- <div class="accordion" v-bind:class="{active: views.map.active}" v-on:click="views.map.active = !views.map.active"> -->
+      <div class="accordion active">
         <strong id="MapTitle">Map</strong>
       </div>
       <div class="panel map-boarder">
@@ -192,20 +202,20 @@
       </div>
     </div>
 
-    <div class="column-light">
+    <!-- <div class="column-light">
       <div style="text-align:right">
         <div>Minutes of Data to Show:</div>
         <input type="number" id="graphCount" value="5">
         <input type="button" name="" value="Update" onclick="updateTime()">
       </div>
-    </div>
+    </div> -->
 
   </template>
 </div>
 </body>
+<script type='text/javascript' src="scripts/dataVue.js"></script>
 <script type='text/javascript' src="scripts/loginVue.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 <script type='text/javascript' src="scripts/graphConfig.js"></script>
-<script type='text/javascript' src="scripts/dataVue.js"></script>
 
 </html>

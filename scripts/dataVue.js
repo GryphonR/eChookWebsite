@@ -136,8 +136,7 @@ var dataApp = new Vue({
         min: 0,
         unit: "",
         show: true
-      },
-
+      }
     },
     sessions: [{
       start: 'time',
@@ -187,7 +186,53 @@ var dataApp = new Vue({
     activateGraph: function() {
       var voltageChartCtx = document.getElementById("voltageChart").getContext('2d');
       var voltageChart = new Chart(voltageChartCtx, graphConfig);
+    },
+    getData: function() {
+      let url = "https://data.echook.uk/api/get/Demo";
+      $.get(url, function(data, status) {
+        if (status === "success") {
+
+          //         //Convert incoming m/s speed to MPH
+          //         data.speed = data.speed * 2.23694;
+          //
+          //         this.vTotal.value = data.voltage;
+          //         this.vLower.value = data.voltsLower;
+          //         this.latest.vUpper.value = data.voltage - data.voltsLower;
+          //         this.latest.current.value = data.current;
+          //         this.latest.ah.value = data.ampH;
+          //         this.latest.rpm.value = data.rpm;
+          //         this.latest.speed.value = data.speed.toFixed(1);
+          //         this.latest.lat.value = data.lat;
+          //         this.latest.lon.value = data.lon;
+          //         this.latest.throttle.value = data.throttle;
+          //         this.latest.tempOne.value = data.temp1;
+          //         this.latest.tempTwo.value = data.temp2;
+          //         this.latest.brake.value = data.brake == 1 ? "ON" : "OFF";
+          //         // if (data.track != currTrack) {
+          //         //   currTrack = data.track;
+          //         //   if (data.track != "") {
+          //         //     $('#MapTitle').text(`Map - ${data.track}`);
+          //         //   } else {
+          //         //     $('#MapTitle').text(`Map`);
+          //         //   }
+          //         // }
+          //         //
+          //         // if (currLap != data.currLap) {
+          //         //   $('#LapNumber').text(data.currLap.toFixed(0));
+          //         //   $('#LLLap').text(currLap.toFixed(0));
+          //         //   $('#LLTime').text(data.LL_Time);
+          //         //   $('#LLVolts').text(data.LL_V);
+          //         //   $('#LLCurrent').text(data.LL_I);
+          //         //   $('#LLSpeed').text(data.LL_Spd);
+          //         //   $('#LLRPM').text(data.LL_RPM);
+          //         //   $('#LLAH').text(data.LL_Ah);
+          //         //   currLap = data.currLap;
+          //         //   jasc
+        } else {
+          console.log('Get Data returned status: ' + status);
+        }
+        //
+      });
     }
   }
-
 })
