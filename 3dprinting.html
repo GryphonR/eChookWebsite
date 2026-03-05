@@ -2,63 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Open source engineering, telemetry hardware, and 3D printed components for makers and motorsport." />
+  <meta name="description" content="3D printed cases, mounts, and custom parts by eChook." />
   <meta name="robots" content="index,follow" />
-  <title>eChook - Open Source Engineering & Telemetry</title>
+  <title>3D Printing Shop | eChook</title>
   <link rel="icon" type="image/jpeg" href="/img/favicon.jpeg" />
   <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/redesign.css" type="text/css">
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Scripts -->
-  <script type='text/javascript' src="scripts/script.js"></script>
 </head>
-
-<body id="body">
-  <!-- Navigation placeholder -->
-  <script>
-    $.get("nav.html", function(data) {
-      $("#nav-placeholder").replaceWith(data);
-    });
-  </script>
+<body>
   <div id="nav-placeholder"></div>
-  <script>
-    $(function() {
-      $('#nav-home').addClass("active");
-    });
-  </script>
-
-  <!-- HERO -->
-  <section id="hero" class="hero">
+  <script type='text/javascript' src="scripts/script.js"></script>
+  <section class="page-hero">
     <div class="hero-content">
-      <h1>Open Source Engineering &amp; Telemetry Solutions</h1>
+      <h1>3D Printed Parts &amp; Files</h1>
       <p>Hardware, data acquisition, and 3D printed components for makers and motorsport.</p>
     </div>
   </section>
+  <main class="container main-content" style="padding-top:2rem;">
+    <p class="contrast">Browse eChook's collection of STL files and purchase options for 3D printed components.</p>
 
-  <!-- SPOKES -->
-  <section id="spokes" class="spokes">
-    <div class="spoke">
-      <h2>Greenpower Telemetry</h2>
-      <p>Complete data logging systems for F24/F24+.</p>
-      <a class="button" href="greenpower.html">For Greenpower Teams</a>
-    </div>
-    <div class="spoke">
-      <h2>3D Printing</h2>
-      <p>Open-source and commercial print files for eChook products.</p>
-      <a class="button" href="3dprinting.html">View Prints</a>
-    </div>
-    <div class="spoke">
-      <h2>Future Products</h2>
-      <p>Stay tuned for new releases.</p>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
+    <section class="spokes" id="print-cards">
+      <div class="spoke">
+        <h2>Greenpower Accessories</h2>
+        <p>Cases, sensor mounts and other Greenpower‑specific models.  All STLs are open source on Printables.</p>
+        <a class="button" href="https://www.printables.com/search?q=echook" target="_blank">View on Printables</a>
+      </div>
+      <div class="spoke">
+        <h2>Honda CR125R L‑Plate Holder</h2>
+        <p>Custom L‑plate mount for Honda CR125R.  Ready to print.</p>
+        <a class="button" href="https://shop.echook.uk" target="_blank">Buy Printed Part</a>
+      </div>
+      <div class="spoke">
+        <h2>Yamaha Clavinova Foot Covers</h2>
+        <p>Protective foot covers for Yamaha Clavinova keyboards.  Non‑open‑source model available pre‑printed.</p>
+        <a class="button" href="https://shop.echook.uk" target="_blank">Buy Printed Part</a>
+      </div>
+    </section>
+  </main>
   <footer>
     <div class="footer-container">
       <div class="footer-col">
@@ -79,6 +62,5 @@
     </div>
     <p>&copy; eChook</p>
   </footer>
-
 </body>
 </html>

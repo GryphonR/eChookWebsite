@@ -1,0 +1,156 @@
+/* Custom styles for redesigned homepage */
+/* Reset and base typography */
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500|Cabin:400,700&display=swap');
+
+html,body {
+  margin:0;
+  padding:0;
+  font-family: 'Cabin', sans-serif;
+  line-height:1.6;
+  color:#333;
+  background: url('../img/bg-small-dark.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1,h2,h3,h4,h5,h6{margin:0;}
+
+/* Navigation */
+.main-nav {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#111;
+  padding:0 1rem;
+  height:60px;
+  z-index:1000;
+}
+.main-nav .logo {
+  font-family:'Oswald', sans-serif;
+  font-size:1.5rem;
+  color:#fff;
+  text-decoration:none;
+}
+.nav-links {
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+}
+.nav-links li + li {margin-left:1.5rem;}
+.nav-links a {
+  color:#fff;
+  text-decoration:none;
+  padding:0.5rem;
+  font-weight:500;
+}
+.nav-links a:hover,
+.nav-links .active > a {opacity:0.8;}
+.nav-links a:focus {outline:2px solid #fff;}
+
+body {padding-top:60px;} /* offset for fixed nav */
+
+/* paragraph background for better contrast on busy backgrounds */
+.main-content p.contrast {
+  background: rgba(255,255,255,0.85);
+  padding: 1rem;
+  border-radius: 6px;
+  color: #000;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Hero section (homepage) */
+.hero {
+  background: linear-gradient(135deg,rgba(0,0,0,0.5),rgba(0,0,0,0.3)), url('../img/echookers/jetII.jpg') no-repeat center center;
+  background-size:cover;
+  color:#fff;
+  text-align:center;
+  padding:8rem 1rem;
+}
+
+/* Page hero for sub-pages */
+.page-hero {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem;
+  margin-top: 60px; /* separate from fixed header */
+}
+.page-hero .hero-content h1 {
+  font-size: 2.5rem;
+}
+.page-hero .hero-content p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+.hero .hero-content {
+  max-width:800px;
+  margin:0 auto;
+}
+.hero h1 {
+  font-size:3rem;
+  line-height:1.2;
+}
+.hero p {
+  font-size:1.25rem;
+  margin-top:1rem;
+}
+
+/* Spokes cards */
+.spokes {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:5rem 1rem;
+  background:#fafafa;
+}
+.spoke {
+  flex:1 1 300px;
+  max-width:320px;
+  margin:1rem;
+  padding:2.5rem;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  text-align:center;
+}
+.spoke h2 {margin-bottom:0.5rem; font-family:'Oswald',sans-serif;}
+.spoke p {margin-bottom:1rem;color:#555;}
+.spoke .button {
+  display:inline-block;
+  padding:0.75rem 1.5rem;
+  background:#007acc;
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  transition:background .2s;
+}
+.spoke .button:hover {background:#005fa3;}
+
+/* How it works */
+.how-it-works {padding:4rem 1rem;}
+.how-it-works h2 {text-align:center;margin-bottom:2rem;font-family:'Oswald',sans-serif;color:#222;}
+.how-it-works ol {max-width:600px;margin:0 auto;padding-left:1.25rem;color:#444;}
+
+/* Education section */
+.education {padding:4rem 1rem;background:#f0f0f0;text-align:center;}
+.education p {max-width:700px;margin:0 auto;color:#444;}
+
+/* Footer */
+footer {background:#111;color:#ccc;padding:2rem 1rem;font-size:0.9rem;}
+.footer-container {display:flex;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;}
+.footer-col {flex:1 1 200px;margin:0.5rem 1rem;text-align:left;}
+.footer-col a {color:#ccc;text-decoration:none;}
+.footer-col a:hover {text-decoration:underline;}
+
+/* Responsive tweaks */
+@media (max-width:768px) {
+  .hero h1 {font-size:2.5rem;}
+  .spoke {max-width:100%;}
+  .nav-links li + li {margin-left:1rem;}
+}

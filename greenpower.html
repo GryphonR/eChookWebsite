@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Greenpower telemetry systems by eChook, complete data logging hardware for F24/F24+." />
+  <meta name="robots" content="index,follow" />
+  <title>Greenpower Telemetry | eChook</title>
+  <link rel="icon" type="image/jpeg" href="/img/favicon.jpeg" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/redesign.css" type="text/css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Scripts -->
+  <script type='text/javascript' src="scripts/script.js"></script>
+</head>
+
+<body>
+  <script>
+    $.get("nav.html", function(data) {
+      $("#nav-placeholder").replaceWith(data);
+    });
+  </script>
+  <div id="nav-placeholder"></div>
+  <script>
+    $(function() {
+      $('#nav-docs').addClass("active");
+    });
+  </script>
+
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1>Greenpower Telemetry</h1>
+      <p>Hardware, data acquisition, and 3D printed components for makers and motorsport.</p>
+    </div>
+  </section>
+  <main class="container main-content" style="padding-top:2rem;">
+    <p class="contrast">The eChook Greenpower Telemetry project originated around 2018 with Greenpower looking for a tailored data logging system for teams, and four engineers ageing out of Greenpower racing. The telemetry systems from our two Greenpower teams, Driven and weChook Racing, was reborn into a kit and app that other teams could build and use, sold on the Greenpower shop.
+
+After a few prototypes, the eChook Nano v1.3 became the first kit sold, with a two layer through hole PCB, a kit of components for teams to assemble, and a focus on keeping the electronic ideas used inline with the GCSE and A-Level Electronics curriculum. Over time this evolved with breakout boards added for the current and magnet sensors making the assembly and mounting easier and more robust.
+
+There was a major change in 2024, with V2 being released. This took the form of a 4 layer PCB that was sold pre-assembled with surface mount components. These changes allowed a far higher component count, enabling far better protection circuitry and significantly increasing the robustness of the system.
+
+The V2.x kits are proving popular, alongside a significant redesign of the online live telemetry page, and a collaboration with the Banchory Greenpower team, who provide the OMNI Android app interfacing with the eChook Nano boards. Full kits are available to buy from Greenpower, accessories and spares are available on the eChook shop, and everything including printable models for the case, is open source.</p>
+
+    <section class="spokes" id="greenpower-cards">
+      <div class="spoke">
+        <h2>Full Kit</h2>
+        <p>Order a complete build‑it‑yourself kit from the Greenpower store (SKU GP1435).</p>
+        <a class="button" href="https://www.greenpower.co.uk/product/340" target="_blank">Go to Greenpower Shop</a>
+      </div>
+      <div class="spoke">
+        <h2>Boards &amp; Accessories</h2>
+        <p>Bare Nano boards, sensors and DIY parts are available from the eChook shop.</p>
+        <a class="button" href="https://shop.echook.uk" target="_blank">Visit eChook Shop</a>
+      </div>
+      <div class="spoke">
+        <h2>3D‑Printed Accessories</h2>
+        <p>Find open‑source print files for cases and mounts on Printables, or buy printed parts via the shop.</p>
+        <a class="button" href="3dprinting.html">3D Print Files &amp; Parts</a>
+      </div>
+      <div class="spoke">
+        <h2>Documentation</h2>
+        <p>Calibration interface, Bluetooth protocol, firmware source code and more are available online.</p>
+        <a class="button" href="https://docs.echook.uk" target="_blank">View Documentation</a>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+      <h2>How the eChook System Works</h2>
+      <ol>
+        <li><strong>Hardware Integration:</strong> Install the Nano V2, build and route the wiring loom, and mount sensors (hall effect, current, temperature) in the car.  System integration is the core engineering challenge.</li>
+        <li><strong>The App:</strong> Connect to the OMNI Android telemetry app via Bluetooth to view live data on the phone.</li>
+        <li><strong>Data Analysis:</strong> Stream live readings to the pit wall or cloud (eChook Private Live Data, dweet.io) for real-time performance tuning.</li>
+      </ol>
+    </section>
+
+    <section id="education" class="education">
+      <h2>Educational Value</h2>
+      <p>Although the V2 board arrives mostly assembled, the learning comes from system integration.  Students and teams practice wiring looms, sensor mounting in harsh environments, signal noise management, and interpreting telemetry—skills directly applicable to motorsport engineering.</p>
+      <p><em>Official app: OMNI (Android only). iOS is not currently supported.</em></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; eChook</p>
+  </footer>
+</body>
+
+</html>
