@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="eChook BMS - Open source Battery Management System communications board and firmware." />
+  <meta name="robots" content="index,follow" />
+  <title>eChook BMS | eChook</title>
+  <link rel="icon" type="image/jpeg" href="/img/favicon.jpeg" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+
+  <link rel="stylesheet" href="css/redesign.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type='text/javascript' src="scripts/script.js"></script>
+</head>
+
+<body id="body">
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <a class="logo" href="/">eChook</a>
+    <ul class="nav-links">
+      <li id="nav-home"><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="greenpower.html">Greenpower</a>
+        <ul class="dropdown-content">
+          <li><a href="https://docs.echook.uk" target="_blank">Documentation</a></li>
+          <li><a href="https://echook.boards.net" target="_blank">Forum</a></li>
+          <li><a href="https://data.echook.uk">Live Data</a></li>
+        </ul>
+      </li>
+      <li id="nav-shop"><a href="https://shop.echook.uk" target="_blank">Shop</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1>eChook BMS</h1>
+      <p>Open-source Battery Management System - an evolution of the SimpBMS project with added protection, including
+        high voltage isolated circuits for battery communications.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="main-content" style="padding: 4rem 1rem; max-width: 1000px; margin: 0 auto; color: #fff;">
+    <div class="project-card" style="margin-bottom: 2rem;">
+      <h2>Overview</h2>
+      <p>Another simple little project that snowballed into something a bit more substantial. It started as a recreation
+        of the open source SimpBMS project, moving it away from a discontinued development board... But if we're using a
+        Teensy 4.1 we should take advantage of the extra I/O pins, right? And while we're at it, lets add some HV
+        Isolation to the battery comms side of things, and some better protection to the inputs... We could use the
+        Teensy RTC and SD Card and improve the logging. And add a proper warning buzzer and eye-searingly bright red
+        warning LED - After all NMC cells aren't renowned for their stability.</p>
+      <p>Substantially snowballed, and grew a little in size, While maintaining cross-compatibility with original
+        SimpBMS connector choices, this should be a bit more robust and a lot more versatile than the original.
+      </p>
+    </div>
+
+    <div class="project-card" style="margin-bottom: 2rem;">
+      <h2>Hardware Features & Protection</h2>
+      <p>The system offers extensive circuit protection, isolating power and communications on critical paths while
+        guarding against overvoltage across digital and analogue inputs up to 24V. Key features include:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.6; color: #ddd;">
+        <li><strong>3x CAN Busses:</strong> All ESD protected. Includes an electronically isolated bus for battery
+          module comms, plus switchable terminating resistors for each bus.</li>
+        <li><strong>Tesla Module UART:</strong> Dedicated, isolated 5V UART port specifically for Tesla Battery Module
+          communications.</li>
+        <li><strong>RS-485 / Modbus:</strong> Dedicated interface (Teensy Serial8) for industrial / Victron compatible
+          equipment.</li>
+        <li><strong>Robust IO Drivers:</strong> 4x Monitored 12V 5A High Side drivers, and 4x PWM-ready 5A Low Side
+          drivers featuring over-current, short circuit, and over-temperature safety.</li>
+        <li><strong>On-Board Logging & Alerts:</strong> Teensy 4.1 SD card slot for RTC-timestamped logging, I2C header
+          for OLED display, and an integrated warning buzzer.</li>
+      </ul>
+    </div>
+
+    <div class="masonry-wrapper" style="padding: 0; column-count: 2;">
+      <div class="project-card" style="text-align: center;">
+        <h2>Firmware Repository</h2>
+        <p>Explore the VSCode/PlatformIO C++ firmware source.</p>
+        <a class="button" href="https://github.com/GryphonR/TeslaBMSV2" target="_blank">View Firmware</a>
+      </div>
+      <div class="project-card" style="text-align: center;">
+        <h2>Hardware Repository</h2>
+        <p>Review the KiCad PCB files and schematics for the Comms Board.</p>
+        <a class="button" href="https://github.com/eChook/BMS-Comms-Board" target="_blank">View Hardware</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <strong>Shop</strong><br>
+        <a href="https://www.greenpower.co.uk/product/340" target="_blank">Greenpower Store (kits)</a><br>
+        <a href="https://shop.echook.uk" target="_blank">eChook Shop (boards & prints)</a>
+      </div>
+      <div class="footer-col">
+        <strong>Code & CAD</strong><br>
+        <a href="https://github.com/echook" target="_blank">GitHub</a><br>
+        <a href="https://www.printables.com/" target="_blank">Printables</a>
+      </div>
+      <div class="footer-col">
+        <strong>Support</strong><br>
+        <a href="https://docs.echook.uk" target="_blank">Documentation</a><br>
+        <a href="https://echook.boards.net" target="_blank">Community Forum</a>
+      </div>
+    </div>
+    <p>&copy; eChook</p>
+  </footer>
+
+</body>
+
+</html>

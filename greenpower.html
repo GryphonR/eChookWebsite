@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Greenpower telemetry systems by eChook, complete data logging hardware for F24/F24+." />
+  <meta name="description"
+    content="Greenpower telemetry systems by eChook, complete data logging hardware for F24/F24+." />
   <meta name="robots" content="index,follow" />
   <title>Greenpower Telemetry | eChook</title>
   <link rel="icon" type="image/jpeg" href="/img/favicon.jpeg" />
@@ -19,71 +20,114 @@
 </head>
 
 <body>
-  <script>
-    $.get("nav.html", function(data) {
-      $("#nav-placeholder").replaceWith(data);
-    });
-  </script>
-  <div id="nav-placeholder"></div>
-  <script>
-    $(function() {
-      $('#nav-docs').addClass("active");
-    });
-  </script>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <a class="logo" href="/">eChook</a>
+    <ul class="nav-links">
+      <li id="nav-home"><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="greenpower.html">Greenpower</a>
+        <ul class="dropdown-content">
+          <li><a href="https://docs.echook.uk" target="_blank">Documentation</a></li>
+          <li><a href="https://echook.boards.net" target="_blank">Forum</a></li>
+          <li><a href="https://data.echook.uk">Live Data</a></li>
+        </ul>
+      </li>
+      <li id="nav-shop"><a href="https://shop.echook.uk" target="_blank">Shop</a></li>
+    </ul>
+  </nav>
 
   <section class="page-hero">
     <div class="hero-content">
       <h1>Greenpower Telemetry</h1>
-      <p>Hardware, data acquisition, and 3D printed components for makers and motorsport.</p>
+      <p>Hardware to collect data, an app to log and upload it, and a website to view it in real time.</p>
     </div>
   </section>
-  <main class="container main-content" style="padding-top:2rem;">
-    <p class="contrast">The eChook Greenpower Telemetry project originated around 2018 with Greenpower looking for a tailored data logging system for teams, and four engineers ageing out of Greenpower racing. The telemetry systems from our two Greenpower teams, Driven and weChook Racing, was reborn into a kit and app that other teams could build and use, sold on the Greenpower shop.
-
-After a few prototypes, the eChook Nano v1.3 became the first kit sold, with a two layer through hole PCB, a kit of components for teams to assemble, and a focus on keeping the electronic ideas used inline with the GCSE and A-Level Electronics curriculum. Over time this evolved with breakout boards added for the current and magnet sensors making the assembly and mounting easier and more robust.
-
-There was a major change in 2024, with V2 being released. This took the form of a 4 layer PCB that was sold pre-assembled with surface mount components. These changes allowed a far higher component count, enabling far better protection circuitry and significantly increasing the robustness of the system.
-
-The V2.x kits are proving popular, alongside a significant redesign of the online live telemetry page, and a collaboration with the Banchory Greenpower team, who provide the OMNI Android app interfacing with the eChook Nano boards. Full kits are available to buy from Greenpower, accessories and spares are available on the eChook shop, and everything including printable models for the case, is open source.</p>
-
-    <section class="spokes" id="greenpower-cards">
-      <div class="spoke">
-        <h2>Full Kit</h2>
-        <p>Order a complete build‑it‑yourself kit from the Greenpower store (SKU GP1435).</p>
-        <a class="button" href="https://www.greenpower.co.uk/product/340" target="_blank">Go to Greenpower Shop</a>
+  <main class="container main-content sidebar-layout" style="padding-top:2rem;">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="project-card">
+        <h2 style="font-size: 1.4rem;">Quick Links</h2>
+        <ul class="sidebar-nav">
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#hardware">Hardware & Kits</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#education">Educational Value</a></li>
+          <li><a href="https://docs.echook.uk" target="_blank">Documentation ↗</a></li>
+        </ul>
       </div>
-      <div class="spoke">
-        <h2>Boards &amp; Accessories</h2>
-        <p>Bare Nano boards, sensors and DIY parts are available from the eChook shop.</p>
-        <a class="button" href="https://shop.echook.uk" target="_blank">Visit eChook Shop</a>
-      </div>
-      <div class="spoke">
-        <h2>3D‑Printed Accessories</h2>
-        <p>Find open‑source print files for cases and mounts on Printables, or buy printed parts via the shop.</p>
-        <a class="button" href="3dprinting.html">3D Print Files &amp; Parts</a>
-      </div>
-      <div class="spoke">
-        <h2>Documentation</h2>
-        <p>Calibration interface, Bluetooth protocol, firmware source code and more are available online.</p>
-        <a class="button" href="https://docs.echook.uk" target="_blank">View Documentation</a>
-      </div>
-    </section>
+    </aside>
 
-    <section id="how-it-works" class="how-it-works">
-      <h2>How the eChook System Works</h2>
-      <ol>
-        <li><strong>Hardware Integration:</strong> Install the Nano V2, build and route the wiring loom, and mount sensors (hall effect, current, temperature) in the car.  System integration is the core engineering challenge.</li>
-        <li><strong>The App:</strong> Connect to the OMNI Android telemetry app via Bluetooth to view live data on the phone.</li>
-        <li><strong>Data Analysis:</strong> Stream live readings to the pit wall or cloud (eChook Private Live Data, dweet.io) for real-time performance tuning.</li>
-      </ol>
-    </section>
+    <!-- Main Content Area -->
+    <div class="content">
+      <div id="about" class="project-card">
+        <h2>About The Project</h2>
+        <p>The eChook Greenpower Telemetry project originated around 2018 with Greenpower looking for a tailored data
+          logging system for teams, and four engineers ageing out of Greenpower racing. The telemetry systems from our
+          two Greenpower teams, Driven and weChook Racing, was reborn into a kit and app that other teams could build
+          and use, sold on the Greenpower shop.</p>
+        <p>After a few prototypes, the eChook Nano v1.3 became the first kit sold, with a two layer through hole PCB, a
+          kit of components for teams to assemble, and a focus on keeping the electronic ideas used inline with the GCSE
+          and A-Level Electronics curriculum. Over time this evolved with breakout boards added for the current and
+          magnet sensors making the assembly and mounting easier and more robust.</p>
+        <p>There was a major change in 2024, with V2 being released. This took the form of a 4 layer PCB that was sold
+          pre-assembled with surface mount components. These changes allowed a far higher component count, enabling far
+          better protection circuitry and significantly increasing the robustness of the system.</p>
+        <p>The V2.x kits are proving popular, alongside a significant redesign of the online live telemetry page, and a
+          collaboration with the Banchory Greenpower team, who provide the OMNI Android app interfacing with the eChook
+          Nano boards. Full kits are available to buy from Greenpower, accessories and spares are available on the
+          eChook shop, and everything including printable models for the case, is open source.</p>
+      </div>
 
-    <section id="education" class="education">
-      <h2>Educational Value</h2>
-      <p>Although the V2 board arrives mostly assembled, the learning comes from system integration.  Students and teams practice wiring looms, sensor mounting in harsh environments, signal noise management, and interpreting telemetry—skills directly applicable to motorsport engineering.</p>
-      <p><em>Official app: OMNI (Android only). iOS is not currently supported.</em></p>
-    </section>
+      <div id="hardware" class="project-card">
+        <h2>Boards & Kits</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+          <div style="flex: 1 1 200px;">
+            <h3>Full Kit</h3>
+            <p style="font-size: 0.95rem;">Order a complete kit from the Greenpower store (SKU
+              GP1435).</p>
+            <a class="button" href="https://www.greenpower.co.uk/product/340" target="_blank">Go to Greenpower Shop</a>
+          </div>
+          <div style="flex: 1 1 200px;">
+            <h3>Spares & Boards</h3>
+            <p style="font-size: 0.95rem;">Bare Nano boards, upgrade kits, sensors and spares are available from the
+              eChook shop.
+            </p>
+            <a class="button" href="https://shop.echook.uk" target="_blank">Visit eChook Shop</a>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div style="flex: 1 1 200px;">
+            <h3>3D‑Printed Accessories</h3>
+            <p style="font-size: 0.95rem;">Find open‑source print files for cases and mounts on Printables.</p>
+            <a class="button" href="3dprinting.html">3D Print Files &amp; Parts</a>
+          </div>
+        </div>
+      </div>
 
+      <div id="how-it-works" class="project-card how-it-works">
+        <h2>How the eChook System Works</h2>
+        <ol style="margin: 0; padding-left: 1.5rem; text-align: left; color: #ddd;">
+          <li style="margin-bottom: 0.5rem"><strong>Hardware Integration:</strong> Install the Nano V2, build and route
+            the wiring loom, and mount sensors (hall effect, current, temperature) in the car.</li>
+          <li style="margin-bottom: 0.5rem"><strong>The App:</strong> Connect to the OMNI Android telemetry app via
+            Bluetooth to view and log data on your phone, as well as augmenting the data with the phones sensors.</li>
+          <li><strong>Data Analysis:</strong> Stream live readings to the <a href="https://live.echook.uk">eChook live
+              website</a> for
+            real-time monitoring in the pits.</li>
+        </ol>
+      </div>
+
+      <!-- <div id="education" class="project-card education" style="background: rgba(20,20,20,0.7);">
+        <h2 style="color: #fff;">Educational Value</h2>
+        <p style="color: #ddd;">Although the V2 board arrives mostly assembled, the learning comes from system
+          integration. Students and teams practice wiring looms, sensor mounting in harsh environments, signal noise
+          management, and interpreting telemetry—skills directly applicable to motorsport engineering.</p>
+        <p style="color: #aaa; margin-top: 1rem;"><em>Official app: OMNI (Android only). iOS is not currently
+            supported.</em></p>
+      </div> -->
+
+    </div>
   </main>
 
   <footer>

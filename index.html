@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Open source engineering, telemetry hardware, and 3D printed components for makers and motorsport." />
+  <meta name="description"
+    content="Open source engineering, telemetry hardware, and 3D printed components for makers and motorsport." />
   <meta name="robots" content="index,follow" />
   <title>eChook - Open Source Engineering & Telemetry</title>
   <link rel="icon" type="image/jpeg" href="/img/favicon.jpeg" />
@@ -18,42 +20,62 @@
 </head>
 
 <body id="body">
-  <!-- Navigation placeholder -->
-  <script>
-    $.get("nav.html", function(data) {
-      $("#nav-placeholder").replaceWith(data);
-    });
-  </script>
-  <div id="nav-placeholder"></div>
-  <script>
-    $(function() {
-      $('#nav-home').addClass("active");
-    });
-  </script>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <a class="logo" href="/">eChook</a>
+    <ul class="nav-links">
+      <li id="nav-home" class="active"><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="greenpower.html">Greenpower</a>
+        <ul class="dropdown-content">
+          <li><a href="https://docs.echook.uk" target="_blank">Documentation</a></li>
+          <li><a href="https://echook.boards.net" target="_blank">Forum</a></li>
+          <li><a href="https://data.echook.uk">Live Data</a></li>
+        </ul>
+      </li>
+      <li id="nav-shop"><a href="https://shop.echook.uk" target="_blank">Shop</a></li>
+    </ul>
+  </nav>
 
   <!-- HERO -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <h1>Open Source Engineering &amp; Telemetry Solutions</h1>
-      <p>Hardware, data acquisition, and 3D printed components for makers and motorsport.</p>
+      <h1>eChook</h1>
+      <p>A brand that started with Greenpower Telemetry, and is slowly evolving into a disparate collection of
+        (mostly) open source projects.
+      </p>
     </div>
   </section>
 
-  <!-- SPOKES -->
-  <section id="spokes" class="spokes">
-    <div class="spoke">
-      <h2>Greenpower Telemetry</h2>
-      <p>Complete data logging systems for F24/F24+.</p>
-      <a class="button" href="greenpower.html">For Greenpower Teams</a>
+  <!-- PROJECTS GRID -->
+  <section class="masonry-wrapper">
+    <div class="project-card">
+      <h2>Greenpower</h2>
+      <p>Complete open-source data logging and telemetry system tailored for F24 and F24+ teams. Gather Data, Log it,
+        watch it live in the pits, and analyse it later.</p>
+      <a class="button" href="greenpower.html">Explore Systems</a>
     </div>
-    <div class="spoke">
-      <h2>3D Printing</h2>
-      <p>Open-source and commercial print files for eChook products.</p>
-      <a class="button" href="3dprinting.html">View Prints</a>
+
+    <div class="project-card">
+      <h2>eChook Shop and Blog</h2>
+      <p>Blog posts, alongside a source for eChook boards, telemetry components, and 3D printed designs that I've
+        thought others may
+        find useful.</p>
+      <a class="button" href="https://shop.echook.uk" target="_blank">Visit Shop</a>
     </div>
-    <div class="spoke">
-      <h2>Future Products</h2>
-      <p>Stay tuned for new releases.</p>
+
+    <div class="project-card">
+      <h2>eChook BMS</h2>
+      <p>An open-source Battery Management Communications board for interfacing with manufactureres module level BMS
+        boards.</p>
+      <a class="button" href="echook-bms.html">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h2>Solar Pear</h2>
+      <p>A small project that started with building a tool to pair the best solar panels for my roof and controller,
+        then it snowballed a little...</p>
+      <a class="button" href="https://github.com/GryphonR/Solar-Pear" target="_blank">View on GitHub</a>
     </div>
   </section>
 
@@ -81,4 +103,5 @@
   </footer>
 
 </body>
+
 </html>

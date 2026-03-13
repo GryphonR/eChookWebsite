@@ -2,6 +2,10 @@
 /* Reset and base typography */
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,500|Cabin:400,700&display=swap');
 
+:root {
+  --e-pink: #E71B64;
+}
+
 html,body {
   margin:0;
   padding:0;
@@ -14,7 +18,6 @@ html,body {
 
 h1,h2,h3,h4,h5,h6{margin:0;}
 
-/* Navigation */
 .main-nav {
   position:fixed;
   top:0;
@@ -27,12 +30,17 @@ h1,h2,h3,h4,h5,h6{margin:0;}
   padding:0 1rem;
   height:60px;
   z-index:1000;
+  border-bottom: 2px solid var(--e-pink);
 }
 .main-nav .logo {
   font-family:'Oswald', sans-serif;
   font-size:1.5rem;
   color:#fff;
   text-decoration:none;
+  transition: color 0.3s ease;
+}
+.main-nav .logo:hover {
+  color: var(--e-pink);
 }
 .nav-links {
   list-style:none;
@@ -46,10 +54,48 @@ h1,h2,h3,h4,h5,h6{margin:0;}
   text-decoration:none;
   padding:0.5rem;
   font-weight:500;
+  transition: color 0.2s ease;
 }
 .nav-links a:hover,
-.nav-links .active > a {opacity:0.8;}
-.nav-links a:focus {outline:2px solid #fff;}
+.nav-links .active > a {
+  color: var(--e-pink);
+  opacity: 1;
+}
+.nav-links a:focus {outline:2px solid var(--e-pink);}
+
+/* Dropdown */
+.nav-links .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav-links .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #111;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 1001;
+  top: 100%;
+  left: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0;
+}
+.nav-links .dropdown-content li {
+  margin-left: 0;
+}
+.nav-links .dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-links .dropdown-content a:hover {
+  background-color: #333;
+}
+.nav-links .dropdown:hover .dropdown-content {
+  display: block;
+}
 
 body {padding-top:60px;} /* offset for fixed nav */
 
@@ -65,22 +111,61 @@ body {padding-top:60px;} /* offset for fixed nav */
 
 /* Hero section (homepage) */
 .hero {
-  background: linear-gradient(135deg,rgba(0,0,0,0.5),rgba(0,0,0,0.3)), url('../img/echookers/jetII.jpg') no-repeat center center;
-  background-size:cover;
+  position: relative;
+  background: rgba(0,0,0,0.8);
   color:#fff;
   text-align:center;
-  padding:8rem 1rem;
+  padding:8rem 2rem;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1; /* relative positioning stack context */
+}
+
+/* Semi-transparent pattern overlays for .hero */
+.hero::before, .hero::after,
+.page-hero::before, .page-hero::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  pointer-events: none;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* PCB Pattern Left */
+.hero::before, .page-hero::before {
+  left: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='miter'%3E%3C!-- 8-pin SOIC Footprint --%3E%3Crect x='15' y='10' width='10' height='20' stroke-width='1'/%3E%3Cpath d='M10,12 h5 m-5,5 h5 m-5,5 h5 m-5,5 h5' stroke-width='2'/%3E%3Cpath d='M25,12 h5 m-5,5 h5 m-5,5 h5 m-5,5 h5' stroke-width='2'/%3E%3C!-- SOT-23 Transistor Footprint --%3E%3Crect x='90' y='20' width='6' height='10' stroke-width='1'/%3E%3Cpath d='M85,22 h5 m-5,6 h5' stroke-width='2'/%3E%3Cpath d='M96,25 h5' stroke-width='2'/%3E%3C!-- 0805 Resistor/Capacitor Pads --%3E%3Cpath d='M50,30 h8 m10,0 h8' stroke-width='4'/%3E%3Cpath d='M10,60 v8 m0,10 v8' stroke-width='4'/%3E%3C!-- QFP 16-pin Square Footprint --%3E%3Crect x='50' y='70' width='20' height='20' stroke-width='1'/%3E%3Cpath d='M52,65 v5 m4,-5 v5 m4,-5 v5 m4,-5 v5' stroke-width='1.5'/%3E%3Cpath d='M52,90 v5 m4,-5 v5 m4,-5 v5 m4,-5 v5' stroke-width='1.5'/%3E%3Cpath d='M45,72 h5 m-5,4 h5 m-5,4 h5 m-5,4 h5' stroke-width='1.5'/%3E%3Cpath d='M70,72 h5 m-5,4 h5 m-5,4 h5 m-5,4 h5' stroke-width='1.5'/%3E%3C!-- Resistor Schematic Symbol --%3E%3Cpath d='M80,105 l3,-4 l6,8 l6,-8 l6,8 l3,-4' stroke-width='1.2'/%3E%3C!-- Capacitor Schematic Symbol --%3E%3Cpath d='M30,100 h10 m-10,4 h10' stroke-width='2'/%3E%3Cpath d='M35,95 v5 m0,4 v5' stroke-width='1'/%3E%3C!-- Diode Schematic Symbol --%3E%3Cpath d='M95,65 l-6,4 l0,-8 z' stroke-width='1' fill='%23ffffff'/%3E%3Cpath d='M89,61 v8' stroke-width='2'/%3E%3Cpath d='M100,65 h-5 m-6,0 h-5' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E") repeat;
+  -webkit-mask-image: linear-gradient(to right, black 30%, transparent 90%);
+  mask-image: linear-gradient(to right, black 30%, transparent 90%);
+}
+
+/* 3D Print Isometric Pattern Right */
+.hero::after, .page-hero::after {
+  right: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='69.282'%3E%3Cg stroke='%23ffffff' stroke-width='1' fill='none'%3E%3Cpath d='M20 0 L40 11.547 L40 34.641 L20 46.188 L0 34.641 L0 11.547 Z'/%3E%3Cpath d='M20 46.188 L20 69.282'/%3E%3Cpath d='M0 34.641 L20 23.094 L40 34.641'/%3E%3Cpath d='M20 23.094 L20 0'/%3E%3C/g%3E%3C/svg%3E") repeat;
+  -webkit-mask-image: linear-gradient(to left, black 20%, transparent);
+  mask-image: linear-gradient(to left, black 20%, transparent);
 }
 
 /* Page hero for sub-pages */
 .page-hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   background: rgba(0,0,0,0.8);
   color: #fff;
   text-align: center;
   padding: 6rem 1rem;
-  margin-top: 60px; /* separate from fixed header */
+  margin-top: 0;
 }
 .page-hero .hero-content h1 {
+  font-family: 'Oswald', sans-serif;
   font-size: 2.5rem;
 }
 .page-hero .hero-content p {
@@ -93,6 +178,7 @@ body {padding-top:60px;} /* offset for fixed nav */
   margin:0 auto;
 }
 .hero h1 {
+  font-family: 'Oswald', sans-serif;
   font-size:3rem;
   line-height:1.2;
 }
@@ -101,52 +187,156 @@ body {padding-top:60px;} /* offset for fixed nav */
   margin-top:1rem;
 }
 
-/* Spokes cards */
-.spokes {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  padding:5rem 1rem;
-  background:#fafafa;
+/* Masonry Wrapper */
+.masonry-wrapper {
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  column-count: 2;
+  column-gap: 2rem;
 }
-.spoke {
-  flex:1 1 300px;
-  max-width:320px;
-  margin:1rem;
-  padding:2.5rem;
-  background:#fff;
-  border-radius:8px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  text-align:center;
+
+/* Sidebar Layout */
+.sidebar-layout {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+  padding: 2rem 1rem;
 }
-.spoke h2 {margin-bottom:0.5rem; font-family:'Oswald',sans-serif;}
-.spoke p {margin-bottom:1rem;color:#555;}
-.spoke .button {
-  display:inline-block;
-  padding:0.75rem 1.5rem;
-  background:#007acc;
-  color:#fff;
-  text-decoration:none;
-  border-radius:4px;
-  transition:background .2s;
+.sidebar-layout .sidebar {
+  flex: 0 0 300px;
+  position: sticky;
+  top: 80px; /* Below fixed nav */
 }
-.spoke .button:hover {background:#005fa3;}
+.sidebar-layout .content {
+  flex: 1;
+}
+
+/* Sidebar Navigation inside card */
+.sidebar .project-card {
+  padding: 1.5rem;
+  margin-bottom: 0;
+}
+.sidebar .sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+.sidebar .sidebar-nav a {
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+.sidebar .sidebar-nav a:hover, .sidebar .sidebar-nav a.active {
+  color: var(--e-pink);
+  border-bottom-color: var(--e-pink);
+}
+
+/* Glassmorphism Dark Cards */
+.project-card {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--e-pink);
+}
+
+.project-card h2 {
+  margin-bottom: 1rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.project-card a:not(.button) {
+  color: var(--e-pink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.project-card a:not(.button):hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.project-card .button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background .3s ease, transform .2s ease, box-shadow .3s ease;
+}
+
+.project-card .button:hover {
+  background: var(--e-pink);
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(231, 27, 100, 0.4);
+}
+
+@media (max-width: 768px) {
+  .masonry-wrapper {
+    column-count: 1;
+  }
+}
 
 /* How it works */
-.how-it-works {padding:4rem 1rem;}
-.how-it-works h2 {text-align:center;margin-bottom:2rem;font-family:'Oswald',sans-serif;color:#222;}
-.how-it-works ol {max-width:600px;margin:0 auto;padding-left:1.25rem;color:#444;}
+.how-it-works {padding:2rem 1rem;}
+.how-it-works h2 {text-align:center;margin-bottom:2rem;font-family:'Oswald',sans-serif;}
+.how-it-works ol {max-width:600px;margin:0 auto;padding-left:1.25rem;}
 
 /* Education section */
-.education {padding:4rem 1rem;background:#f0f0f0;text-align:center;}
-.education p {max-width:700px;margin:0 auto;color:#444;}
+.education {padding:2rem 1rem;text-align:center;}
+.education p {max-width:700px;margin:0 auto;}
 
 /* Footer */
-footer {background:#111;color:#ccc;padding:2rem 1rem;font-size:0.9rem;}
+footer {
+  background:#111;
+  color:#ccc;
+  padding:2rem 1rem;
+  font-size:0.9rem;
+  border-top: 2px solid var(--e-pink);
+}
 .footer-container {display:flex;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;}
 .footer-col {flex:1 1 200px;margin:0.5rem 1rem;text-align:left;}
-.footer-col a {color:#ccc;text-decoration:none;}
-.footer-col a:hover {text-decoration:underline;}
+.footer-col a {
+  color:#ccc;
+  text-decoration:none;
+  transition: color 0.2s ease;
+}
+.footer-col a:hover {
+  text-decoration:none;
+  color: var(--e-pink);
+}
 
 /* Responsive tweaks */
 @media (max-width:768px) {
